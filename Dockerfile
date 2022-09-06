@@ -17,7 +17,7 @@ RUN pip install --upgrade pip \
     && apt-get install -y --no-install-recommends \
     && PIPENV_VENV_IN_PROJECT=1 pipenv install --ignore-pipfile --deploy --python 3.10
 
-# Create a final layer with only necessary dependencies \
+# Create a final layer with only necessary dependencies
 FROM base as final
 
 COPY --from=updates $PROJECT_FOLDER/.venv $PROJECT_FOLDER/.venv
