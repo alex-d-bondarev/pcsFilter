@@ -20,6 +20,7 @@ sfilter <path to project or file>
      - 3.7.12
      - 3.8.12
      - 3.9.1 
+     - 3.10.6
 4. Run make command:
    ```shell
    make install
