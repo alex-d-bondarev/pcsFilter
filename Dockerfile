@@ -1,3 +1,4 @@
+# Used for e2e test
 FROM python:3.10.6-slim as base
 
 ARG PROJECT_FOLDER=/sfilter
@@ -24,9 +25,15 @@ COPY --from=updates $PROJECT_FOLDER/.venv $PROJECT_FOLDER/.venv
 ENV PATH="${PROJECT_FOLDER}/.venv/bin:$PATH"
 
 COPY ./src $PROJECT_FOLDER/src
+COPY ./tests/sfilter/e2e/actual $PROJECT_FOLDER/actual
+COPY ./tests/sfilter/e2e/expected $PROJECT_FOLDER/expected
+COPY ./tests/sfilter/e2e/test_sfilter_results.py $PROJECT_FOLDER/test_sfilter_results.py
 COPY setup.py $PROJECT_FOLDER
 COPY README.md $PROJECT_FOLDER
 
-VOLUME $PROJECT_FOLDER
-
 RUN pip install -e .
+WORKDIR $PROJECT_FOLDER/actual
+RUN sfilter .
+WORKDIR $PROJECT_FOLDER
+
+ENTRYPOINT ["pytest", "-vv", "--full-trace", "-m"]

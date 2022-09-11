@@ -13,7 +13,7 @@ class QualityHandler:
         self.config_is_in_root = False
 
     def compare_metrics(self):
-        """Compare initial metrics with new metrics"""
+        """Compare actual metrics with new metrics"""
         self._count_new_flake8_flags()
         self._calculate_new_mi_stats()
         self._load_previous_metrics()

@@ -45,7 +45,7 @@ pip install -e .
 
 ```shell
 PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python setup.py bdist_wheel
-PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pip install -e .
+PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pip3 install -e .
 pipenv shell
 sfilter src/sfilter
 exit

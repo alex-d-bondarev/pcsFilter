@@ -6,7 +6,7 @@ default:
 	@echo "clean \t\t # Clean the project"
 	@echo "install \t # Install project dependencies"
 	@echo "reinstall \t # Clean the project and install from scratch"
-	@echo "test \t\t # Run all (unit, integration, e2e) tests against multiple python versions"
+	@echo "test_all \t\t # Run all (unit, integration, e2e) tests against multiple python versions"
 	@echo "quick_test \t # Quick test (unit, integration) the project against current python version"
 	@echo "\nThe following commands are supported for debugging:\n"
 	@echo "start_docker \t\t # Build sfilter docker and run bash from inside"
@@ -21,7 +21,7 @@ install:
 	pipenv install
 
 
-test: tox sfilter_src
+test_all: tox e2e_test sfilter_src
 
 tox:
 	@echo "Prepare environment"
@@ -42,10 +42,11 @@ sfilter_src:
 pip_build:
 	pip install -e .
 
+e2e_test: start_docker stop_clean_docker
+
 start_docker:
 	docker build -t sfilter .
-	docker run --name sfilter-container -dit sfilter
-	docker exec -it sfilter-container bash
+	docker run -it --name sfilter-container sfilter e2e
 
 stop_clean_docker:
 	docker stop `docker ps -aq`
