@@ -8,9 +8,6 @@ default:
 	@echo "reinstall \t # Clean the project and install from scratch"
 	@echo "test_all \t\t # Run all (unit, integration, e2e) tests against multiple python versions"
 	@echo "quick_test \t # Quick test (unit, integration) the project against current python version"
-	@echo "\nThe following commands are supported for debugging:\n"
-	@echo "start_docker \t\t # Build sfilter docker and run bash from inside"
-	@echo "stop_clean_docker \t # Stop all containers and perform full cleanup"
 
 reinstall: clean install
 
