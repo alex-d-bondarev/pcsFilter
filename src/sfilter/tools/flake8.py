@@ -2,6 +2,7 @@
 Use the same approach as in flake8 tests
 https://github.com/PyCQA/flake8/blob/main/tests/integration/test_main.py#L15
 """
+
 from flake8.main import cli
 
 

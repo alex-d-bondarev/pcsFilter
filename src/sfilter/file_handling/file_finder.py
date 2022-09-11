@@ -7,7 +7,7 @@ from src.sfilter.file_handling.non_existing_file import NonExistingFile
 
 
 def find_file(name: str, path: Optional[str] = None) -> AFileHandler:
-    """Find file by given name and return it in the form of FileHandlerInterface
+    """Find file by given name and return it in the form of AFileHandler
 
     :param name:
     :param path:
@@ -28,7 +28,7 @@ def find_file(name: str, path: Optional[str] = None) -> AFileHandler:
 
 
 def find_file_by_path(path: Path) -> AFileHandler:
-    """Find file by given path and return it in the form of FileHandlerInterface
+    """Find file by given path and return it in the form of AFileHandler
 
     :param path:
     :return:
@@ -37,3 +37,9 @@ def find_file_by_path(path: Path) -> AFileHandler:
         return ExistingFile(Path(path))
     except (StopIteration, FileNotFoundError):
         return NonExistingFile(str(path))
+
+
+def find_file_relative(name: str) -> AFileHandler:
+    """Find file in the current directory and return it in the form of AFileHandler"""
+    relative_file_path = Path(".") / name
+    return find_file_by_path(relative_file_path)

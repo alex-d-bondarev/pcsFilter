@@ -1,6 +1,7 @@
 """
 Call radon mi() command
 """
+
 import radon.cli as cli
 
 

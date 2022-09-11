@@ -4,7 +4,8 @@ from typing import Optional
 
 from configupdater import ConfigUpdater
 
-from src.sfilter.file_handling.file_finder import find_file, find_file_by_path
+from src.sfilter.file_handling.file_finder import (find_file_by_path,
+                                                   find_file_relative)
 
 SECTION_NAME = "sfilter"
 NEW_CONFIG_FILE = "[sfilter]\n# Goal is '0'\nflake8 = -1\n# Goal is '100'\nmi = -1\n"
@@ -27,7 +28,7 @@ class SetUpHandler:
             wrapped_path = wrapped_path / "setup.cfg"
             self.config_file = find_file_by_path(path=wrapped_path)
         else:
-            self.config_file = find_file(name="setup.cfg")
+            self.config_file = find_file_relative("setup.cfg")
 
         if not self.config_file.exists():
             self.config_file = self.config_file.write(NEW_CONFIG_FILE)

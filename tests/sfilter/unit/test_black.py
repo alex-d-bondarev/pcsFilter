@@ -9,6 +9,7 @@ from tests.sfilter.unit.fixtures import create_temp_file  # noqa
     [{"file_name": "temp_test_black.py", "file_content": "\nimport os"}],
     indirect=True,
 )
+@pytest.mark.unit
 def test_black(create_temp_file):
     """Test that black is launched"""
     expected = "import os\n"

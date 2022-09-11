@@ -10,6 +10,7 @@ from tests.sfilter.unit.fixtures import create_temp_file  # noqa
     [{"file_name": "temp_test_flake8.py", "file_content": "\nimport os"}],
     indirect=True,
 )
+@pytest.mark.unit
 def test_flake8(create_temp_file):
     """Test that flake8 is launched"""
     error1 = "F401 'os' imported but unused"

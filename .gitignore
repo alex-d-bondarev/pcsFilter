@@ -1,8 +1,10 @@
+*.egg-info/
 *.log
 *.txt
 !flake8.txt
+.pytest_cache
+.tox
 __pycache__/
 build/
 dist/
-*.egg-info/
-.tox
+venv
