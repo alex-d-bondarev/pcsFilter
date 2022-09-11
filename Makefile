@@ -2,11 +2,12 @@
 
 default:
 	@echo "\nThe following commands are supported for general usage:\n"
-	@echo "build \t\t # Build sfilter locally via pip"
+	@echo "pip_build \t # Build sfilter locally via pip"
 	@echo "clean \t\t # Clean the project"
 	@echo "install \t # Install project dependencies"
 	@echo "reinstall \t # Clean the project and install from scratch"
-	@echo "test \t\t # Test the project"
+	@echo "test \t\t # Run all (unit, integration, e2e) tests against multiple python versions"
+	@echo "quick_test \t # Quick test (unit, integration) the project against current python version"
 	@echo "\nThe following commands are supported for debugging:\n"
 	@echo "start_docker \t\t # Build sfilter docker and run bash from inside"
 	@echo "stop_clean_docker \t # Stop all containers and perform full cleanup"
@@ -20,7 +21,7 @@ install:
 	pipenv install
 
 
-test: tox sfilter
+test: tox sfilter_src
 
 tox:
 	@echo "Prepare environment"
@@ -29,16 +30,16 @@ tox:
 	@echo "Run tox"
 	tox
 
-pytest:
+quick_test:
 	@echo "Run tests"
-	PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pytest -v
+	PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pytest -v -m "unit or integration"
 
-sfilter:
+sfilter_src:
 	@echo "Run sfilter"
-	$(MAKE) build
+	$(MAKE) pip_build
 	sfilter ./src
 
-build:
+pip_build:
 	pip install -e .
 
 start_docker:

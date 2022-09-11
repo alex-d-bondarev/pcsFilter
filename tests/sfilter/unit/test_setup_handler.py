@@ -5,11 +5,13 @@ from src.sfilter.setup_handler import SetUpHandler
 from tests.sfilter.unit.fixtures import roll_back_file  # noqa
 
 
+@pytest.mark.unit
 def test_sfilter_section_is_present():
     assert SetUpHandler().has_section("sfilter")
 
 
 @pytest.mark.parametrize("roll_back_file", ["setup.cfg"], indirect=True)
+@pytest.mark.unit
 def test_setup_writes_without_changes(roll_back_file):
     content_before = _setup_file_content()
     SetUpHandler().save()
@@ -18,6 +20,7 @@ def test_setup_writes_without_changes(roll_back_file):
 
 
 @pytest.mark.parametrize("roll_back_file", ["setup.cfg"], indirect=True)
+@pytest.mark.unit
 def test_flake8_value_can_be_updated(roll_back_file):
     content_before = _setup_file_content()
     setup_h = SetUpHandler()

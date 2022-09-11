@@ -10,6 +10,7 @@ from tests.sfilter.unit.fixtures import create_temp_file  # noqa
     [{"file_name": "temp_test_radon.py", "file_content": "import os"}],
     indirect=True,
 )
+@pytest.mark.unit
 def test_radon(create_temp_file):
     """Test that radon is launched"""
     expected_content = '{"mi": 100.0, "rank": "A"}'

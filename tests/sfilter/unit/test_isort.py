@@ -9,6 +9,7 @@ from tests.sfilter.unit.fixtures import create_temp_file  # noqa
     [{"file_name": "temp_test_isort.py", "file_content": "import pathlib\nimport os"}],
     indirect=True,
 )
+@pytest.mark.unit
 def test_isort(create_temp_file):
     """Test that isort is launched"""
     expected = "import os\nimport pathlib\n"

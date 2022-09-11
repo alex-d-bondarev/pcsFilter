@@ -1,10 +1,12 @@
 import os
 
+import pytest
 from click.testing import CliRunner
 
 from src.sfilter.cli import main
 
 
+@pytest.mark.integration
 def test_one_file():
     file_name = "simple.py"
     runner = CliRunner()
