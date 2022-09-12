@@ -30,6 +30,7 @@ COPY ./tests/sfilter/e2e/expected $PROJECT_FOLDER/expected
 COPY ./tests/sfilter/e2e/test_sfilter_results.py $PROJECT_FOLDER/test_sfilter_results.py
 COPY setup.py $PROJECT_FOLDER
 COPY README.md $PROJECT_FOLDER
+COPY pytest.ini $PROJECT_FOLDER
 
 RUN pip install -e .
 WORKDIR $PROJECT_FOLDER/actual

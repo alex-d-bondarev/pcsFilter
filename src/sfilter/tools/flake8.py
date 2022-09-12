@@ -8,6 +8,6 @@ from flake8.main import cli
 
 def run_flake8(path: str) -> None:
     try:
-        cli.main([path, "--output-file=flake8.txt"])
+        cli.main([path, '--output-file=flake8.txt'])
     except SystemExit:
         pass  # expected exception

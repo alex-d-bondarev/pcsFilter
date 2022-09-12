@@ -43,7 +43,7 @@ class ExistingFile(AFileHandler):
 
     def writable_file(self) -> TextIO:
         """Object that allows to write to path_to_file"""
-        return self.path_to_file.open("w")
+        return self.path_to_file.open('w')
 
     def write(self, text: str) -> AFileHandler:
         """Overwrite file content with the given text

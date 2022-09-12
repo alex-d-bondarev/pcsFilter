@@ -3,8 +3,7 @@
 ./real_python.py:18:5: F841 local variable 'some_global_var' is assigned to but never used
 ./real_python.py:31:10: E711 comparison to None should be 'if cond is not None:'
 ./real_python.py:46:9: F841 local variable 'list_comprehension' is assigned to but never used
-./real_python.py:46:48: F405 'pi' may be undefined, or defined from star imports: math
-./real_python.py:46:80: E501 line too long (87 > 79 characters)
-./real_python.py:47:9: F841 local variable 'time' is assigned to but never used
-./real_python.py:47:16: F823 local variable 'time' defined in enclosing scope on line 9 referenced before assignment
-./real_python.py:50:9: F841 local variable 'date_and_time' is assigned to but never used
+./real_python.py:47:30: F405 'pi' may be undefined, or defined from star imports: math
+./real_python.py:49:9: F841 local variable 'time' is assigned to but never used
+./real_python.py:49:16: F823 local variable 'time' defined in enclosing scope on line 9 referenced before assignment
+./real_python.py:52:9: F841 local variable 'date_and_time' is assigned to but never used

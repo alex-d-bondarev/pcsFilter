@@ -14,7 +14,7 @@ def parse_arguments(**kwargs: str) -> Arguments:
     :param kwargs:
     :return:
     """
-    path = Path(kwargs["path"])
+    path = Path(kwargs['path'])
 
     if path.is_dir():
         dir_path = path

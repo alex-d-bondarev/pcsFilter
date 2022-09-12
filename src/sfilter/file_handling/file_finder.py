@@ -15,7 +15,7 @@ def find_file(name: str, path: Optional[str] = None) -> AFileHandler:
     """
     try:
         if path:
-            if path.endswith(".py"):
+            if path.endswith('.py'):
                 return ExistingFile(Path(path))
             else:
                 return ExistingFile(Path(path + name))
@@ -40,6 +40,9 @@ def find_file_by_path(path: Path) -> AFileHandler:
 
 
 def find_file_relative(name: str) -> AFileHandler:
-    """Find file in the current directory and return it in the form of AFileHandler"""
-    relative_file_path = Path(".") / name
+    """
+    Find file in the current directory
+    and return it in the form of AFileHandler
+    """
+    relative_file_path = Path('.') / name
     return find_file_by_path(relative_file_path)

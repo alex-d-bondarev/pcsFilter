@@ -17,7 +17,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        "black==21.12b0",
+        "blue~=0.9.1",
         "click~=8.0.3",
         "ConfigUpdater~=3.0.1",
         "flake8~=3.9.2",
