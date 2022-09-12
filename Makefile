@@ -6,13 +6,14 @@ default:
 	@echo "clean \t\t # Clean the project"
 	@echo "install \t # Install project dependencies"
 	@echo "reinstall \t # Clean the project and install from scratch"
-	@echo "test_all \t\t # Run all (unit, integration, e2e) tests against multiple python versions"
+	@echo "test_all \t # Run all (unit, integration, e2e) tests against multiple python versions"
 	@echo "quick_test \t # Quick test (unit, integration) the project against current python version"
 
 reinstall: clean install
 
 clean:
 	pipenv --rm
+	rm -f Pipfile.lock
 
 install:
 	pipenv install
@@ -33,6 +34,7 @@ quick_test:
 
 sfilter_src:
 	@echo "Run sfilter"
+	pyenv local 3.10.6
 	$(MAKE) pip_build
 	sfilter ./src
 
