@@ -13,7 +13,7 @@ def test_one_file():
 
     with runner.isolated_filesystem():
         with open(file_name, "w") as f:
-            f.write("import os")
+            f.write("import os\n")
             file_path = os.path.realpath(f.name)
 
         result = runner.invoke(main, [file_path])
