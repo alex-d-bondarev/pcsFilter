@@ -1,6 +1,5 @@
 *.egg-info/
 *.log
-*.txt
 !flake8.txt
 .pytest_cache
 .tox
