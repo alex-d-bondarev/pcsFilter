@@ -10,5 +10,6 @@ def run_radon(dir_path):
         paths=[dir_path],
         no_assert=True,
         total_average=True,
+        order='ALPHA',
         output_file='radon.txt',
     )
