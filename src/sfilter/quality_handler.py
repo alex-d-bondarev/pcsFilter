@@ -68,9 +68,7 @@ class QualityHandler:
 
         for line in radon_content.split('\n'):
             if 'Average complexity' in line:
-                self.new_cc = re.search('\((.*)\)', line).group(  # noqa: W605
-                    1
-                )
+                self.new_cc = re.search('\((.*)\)', line).group(1)  # noqa
 
     def _compare_flake8(self):
         if self.init_flake8 is not None:
