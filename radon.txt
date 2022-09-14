@@ -1,0 +1,76 @@
+src/sfilter/quality_handler.py
+    [1m[37mM [0m51:4 QualityHandler._generate_file_path - [32mA[0m
+    [1m[37mM [0m65:4 QualityHandler._calculate_new_cc_stats - [32mA[0m
+    [1m[36mC [0m8:0 QualityHandler - [32mA[0m
+    [1m[37mM [0m15:4 QualityHandler._load_init_value - [32mA[0m
+    [1m[37mM [0m31:4 QualityHandler._load_previous_metrics - [32mA[0m
+    [1m[37mM [0m73:4 QualityHandler._compare_flake8 - [32mA[0m
+    [1m[37mM [0m83:4 QualityHandler._compare_mi - [32mA[0m
+    [1m[37mM [0m11:4 QualityHandler.__init__ - [32mA[0m
+    [1m[37mM [0m22:4 QualityHandler.compare_metrics - [32mA[0m
+    [1m[37mM [0m39:4 QualityHandler._count_new_flake8_flags - [32mA[0m
+    [1m[37mM [0m46:4 QualityHandler._load_content - [32mA[0m
+    [1m[37mM [0m94:4 QualityHandler._save_result - [32mA[0m
+src/sfilter/cli.py
+    [1m[35mF [0m8:0 main - [32mA[0m
+src/sfilter/app.py
+    [1m[35mF [0m18:0 run_all - [32mA[0m
+    [1m[35mF [0m12:0 clean_before_test - [32mA[0m
+src/sfilter/arguments_handler.py
+    [1m[35mF [0m11:0 parse_arguments - [32mA[0m
+    [1m[36mC [0m5:0 Arguments - [32mA[0m
+    [1m[37mM [0m6:4 Arguments.__init__ - [32mA[0m
+src/sfilter/setup_handler.py
+    [1m[37mM [0m25:4 SetUpHandler._load_config_file - [32mA[0m
+    [1m[36mC [0m16:0 SetUpHandler - [32mA[0m
+    [1m[37mM [0m48:4 SetUpHandler.get - [32mA[0m
+    [1m[37mM [0m19:4 SetUpHandler.__init__ - [32mA[0m
+    [1m[37mM [0m38:4 SetUpHandler.has_section - [32mA[0m
+    [1m[37mM [0m44:4 SetUpHandler.save - [32mA[0m
+    [1m[37mM [0m64:4 SetUpHandler.set - [32mA[0m
+src/sfilter/file_handling/abstract_file_handler.py
+    [1m[36mC [0m7:0 AFileHandler - [32mA[0m
+    [1m[37mM [0m11:4 AFileHandler.delete - [32mA[0m
+    [1m[37mM [0m16:4 AFileHandler.exists - [32mA[0m
+    [1m[37mM [0m21:4 AFileHandler.file_path - [32mA[0m
+    [1m[37mM [0m26:4 AFileHandler.get_content - [32mA[0m
+    [1m[37mM [0m33:4 AFileHandler.name - [32mA[0m
+    [1m[37mM [0m38:4 AFileHandler.writable_file - [32mA[0m
+    [1m[37mM [0m43:4 AFileHandler.write - [32mA[0m
+src/sfilter/file_handling/non_existing_file.py
+    [1m[36mC [0m8:0 NonExistingFile - [32mA[0m
+    [1m[37mM [0m11:4 NonExistingFile.__init__ - [32mA[0m
+    [1m[37mM [0m14:4 NonExistingFile.delete - [32mA[0m
+    [1m[37mM [0m18:4 NonExistingFile.exists - [32mA[0m
+    [1m[37mM [0m22:4 NonExistingFile.file_path - [32mA[0m
+    [1m[37mM [0m26:4 NonExistingFile.get_content - [32mA[0m
+    [1m[37mM [0m30:4 NonExistingFile.name - [32mA[0m
+    [1m[37mM [0m34:4 NonExistingFile.writable_file - [32mA[0m
+    [1m[37mM [0m38:4 NonExistingFile.write - [32mA[0m
+src/sfilter/file_handling/existing_file.py
+    [1m[36mC [0m10:0 ExistingFile - [32mA[0m
+    [1m[37mM [0m13:4 ExistingFile.__init__ - [32mA[0m
+    [1m[37mM [0m18:4 ExistingFile.delete - [32mA[0m
+    [1m[37mM [0m26:4 ExistingFile.exists - [32mA[0m
+    [1m[37mM [0m30:4 ExistingFile.file_path - [32mA[0m
+    [1m[37mM [0m34:4 ExistingFile.get_content - [32mA[0m
+    [1m[37mM [0m40:4 ExistingFile.name - [32mA[0m
+    [1m[37mM [0m44:4 ExistingFile.writable_file - [32mA[0m
+    [1m[37mM [0m48:4 ExistingFile.write - [32mA[0m
+src/sfilter/file_handling/file_finder.py
+    [1m[35mF [0m9:0 find_file - [32mA[0m
+    [1m[35mF [0m30:0 find_file_by_path - [32mA[0m
+    [1m[35mF [0m42:0 find_file_relative - [32mA[0m
+src/sfilter/tools/black.py
+    [1m[35mF [0m10:0 run_black - [32mA[0m
+src/sfilter/tools/flake8.py
+    [1m[35mF [0m9:0 run_flake8 - [32mA[0m
+src/sfilter/tools/radon.py
+    [1m[35mF [0m8:0 run_radon - [32mA[0m
+src/sfilter/tools/blue.py
+    [1m[35mF [0m8:0 run_blue - [32mA[0m
+src/sfilter/tools/isort.py
+    [1m[35mF [0m9:0 run_isort - [32mA[0m
+
+59 blocks (classes, functions, methods) analyzed.
+Average complexity: [32mA (1.4576271186440677)[0m
