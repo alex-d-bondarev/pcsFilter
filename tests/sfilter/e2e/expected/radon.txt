@@ -1,0 +1,8 @@
+real_python.py
+    [1m[35mF [0m25:0 is_sum_lucky - [32mA[0m
+    [1m[36mC [0m42:0 SomeClass - [32mA[0m
+    [1m[37mM [0m43:4 SomeClass.__init__ - [32mA[0m
+    [1m[35mF [0m14:0 multiply - [32mA[0m
+
+4 blocks (classes, functions, methods) analyzed.
+Average complexity: [32mA (3.25)[0m

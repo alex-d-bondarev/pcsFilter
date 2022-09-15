@@ -9,7 +9,7 @@ from src.sfilter.file_handling.file_finder import (find_file_by_path,
 
 SECTION_NAME = 'sfilter'
 NEW_CONFIG_FILE = (
-    "[sfilter]\n# Goal is '0'\nflake8 = -1\n# Goal is '100'\nmi = -1\n"
+    "[sfilter]\n# Goal is '0'\nflake8 = -1\n# Goal is '0'\ncc = -1\n"
 )
 
 

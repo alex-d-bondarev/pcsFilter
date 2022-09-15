@@ -30,6 +30,7 @@ tox:
 
 quick_test:
 	@echo "Run tests"
+	pyenv local 3.10.6
 	PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pytest -v -m "unit or integration"
 
 sfilter_src:

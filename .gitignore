@@ -2,6 +2,7 @@
 *.log
 *.txt
 !flake8.txt
+!radon.txt
 .pytest_cache
 .tox
 __pycache__/

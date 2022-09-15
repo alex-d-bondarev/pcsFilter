@@ -1,4 +1,4 @@
-import json
+import re
 from pathlib import Path
 
 from src.sfilter.file_handling.file_finder import find_file_by_path
@@ -22,7 +22,7 @@ class QualityHandler:
     def compare_metrics(self):
         """Compare initial metrics with new metrics"""
         self._count_new_flake8_flags()
-        self._calculate_new_mi_stats()
+        self._calculate_new_cc_stats()
         self._load_previous_metrics()
         self._compare_flake8()
         self._compare_mi()
@@ -62,15 +62,13 @@ class QualityHandler:
             path = Path(file_name)
             return path
 
-    def _calculate_new_mi_stats(self):
-        radon_content = self._load_content(file_name='radon.json')
-        radon_dict = json.loads(radon_content)
-        mi_scores = 0
+    def _calculate_new_cc_stats(self):
+        radon_content = self._load_content(file_name='radon.txt')
+        self.new_cc = 0
 
-        for stat in radon_dict.items():
-            mi_scores += float(stat[1]['mi'])
-
-        self.new_mi = mi_scores / len(radon_dict)
+        for line in radon_content.split('\n'):
+            if 'Average complexity' in line:
+                self.new_cc = re.search('\((.*)\)', line).group(1)  # noqa
 
     def _compare_flake8(self):
         if self.init_flake8 is not None:
@@ -84,16 +82,16 @@ class QualityHandler:
 
     def _compare_mi(self):
         if self.init_mi is not None:
-            assert float(self.init_mi) <= self.new_mi, (
+            assert float(self.init_mi) <= self.new_cc, (
                 f'Radon maintainability index was {self.init_mi} '
-                f'but became {self.new_mi}. '
+                f'but became {self.new_cc}. '
                 'You have made code less maintainable. '
-                'Please check radon.json for details. '
+                'Please check radon.txt for details. '
                 'Please improve maintainability back. '
                 'Appreciate if you make it even better. '
             )
 
     def _save_result(self):
         self.setup.set('flake8', str(self.new_flake8))
-        self.setup.set('mi', str(self.new_mi))
+        self.setup.set('cc', str(self.new_cc))
         self.setup.save()
