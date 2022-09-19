@@ -1,4 +1,4 @@
-from src.sfilter.file_handling.file_finder import find_file_relative
+from src.sfilter.file_handling.file_finder import file_from_same_dir
 from src.sfilter.quality_handler import QualityHandler
 from src.sfilter.tools.black import run_black
 from src.sfilter.tools.blue import run_blue
@@ -11,8 +11,8 @@ VERSION_ONE_PLUS = False
 
 def clean_before_test() -> None:
     """Clean up analysis logs before tests"""
-    find_file_relative('flake8.txt').delete()
-    find_file_relative('radon.json').delete()
+    file_from_same_dir('flake8.txt').delete()
+    file_from_same_dir('radon.json').delete()
 
 
 def run_all(path):

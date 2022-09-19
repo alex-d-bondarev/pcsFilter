@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-from src.sfilter.file_handling.file_finder import find_file_by_path
+from src.sfilter.file_handling.file_finder import file_from_path
 from src.sfilter.setup_handler import SetUpHandler
 
 
@@ -45,7 +45,7 @@ class QualityHandler:
 
     def _load_content(self, file_name: str):
         wrapped_path = self._generate_file_path(file_name)
-        flake8_content = find_file_by_path(wrapped_path).get_content()
+        flake8_content = file_from_path(wrapped_path).get_content()
         return flake8_content
 
     def _generate_file_path(self, file_name):
@@ -68,7 +68,7 @@ class QualityHandler:
 
         for line in radon_content.split('\n'):
             if 'Average complexity' in line:
-                self.new_cc = re.search('\((.*)\)', line).group(1)  # noqa
+                self.new_cc = re.search(r'\((.*)\)', line).group(1)
 
     def _compare_flake8(self):
         if self.init_flake8 is not None:
