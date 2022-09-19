@@ -10,7 +10,7 @@ from src.sfilter.app import run_all
     '-0',
     required=False,
     type=str,
-    default='.',
+    default='.sfilter',
     show_default=True,
     help='Output path for generated files',
 )

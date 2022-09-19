@@ -10,14 +10,7 @@ class QualityHandler:
 
     def __init__(self, path: str, output_path: Path):
         self.path = path
-        self.config_is_in_root = False
-
-    def _load_init_value(self, key: str):
-        value = self.setup.get(key)
-        if value == '-1':
-            return None
-        else:
-            return value
+        self.output_path = output_path
 
     def compare_metrics(self):
         """Compare initial metrics with new metrics"""
@@ -28,39 +21,12 @@ class QualityHandler:
         self._compare_mi()
         self._save_result()
 
-    def _load_previous_metrics(self):
-        if self.config_is_in_root:
-            self.setup = SetUpHandler()
-        else:
-            self.setup = SetUpHandler(path=self.path)
-        self.init_flake8 = self._load_init_value('flake8')
-        self.init_mi = self._load_init_value('mi')
-
     def _count_new_flake8_flags(self):
         last_line_does_not_count = 1
         flake8_content = self._load_content(file_name='flake8.txt')
         self.new_flake8 = (
             len(flake8_content.split('\n')) - last_line_does_not_count
         )
-
-    def _load_content(self, file_name: str):
-        wrapped_path = self._generate_file_path(file_name)
-        flake8_content = file_from_path(wrapped_path).get_content()
-        return flake8_content
-
-    def _generate_file_path(self, file_name):
-        wrapped_path = Path(self.path)
-        self.config_is_in_root = False
-        if self.path.endswith('.py'):
-            wrapped_path = wrapped_path.parent
-        wrapped_path = wrapped_path / file_name
-
-        if wrapped_path.exists():
-            return wrapped_path
-        else:
-            self.config_is_in_root = True
-            path = Path(file_name)
-            return path
 
     def _calculate_new_cc_stats(self):
         radon_content = self._load_content(file_name='radon.txt')
@@ -69,6 +35,23 @@ class QualityHandler:
         for line in radon_content.split('\n'):
             if 'Average complexity' in line:
                 self.new_cc = re.search(r'\((.*)\)', line).group(1)
+
+    def _load_previous_metrics(self):
+        self.setup = SetUpHandler()
+        self.init_flake8 = self._load_init_value('flake8')
+        self.init_mi = self._load_init_value('mi')
+
+    def _load_init_value(self, key: str):
+        value = self.setup.get(key)
+        if value == '-1':
+            return None
+        else:
+            return value
+
+    def _load_content(self, file_name: str):
+        wrapped_path = self.output_path / file_name
+        file_content = file_from_path(wrapped_path).get_content()
+        return file_content
 
     def _compare_flake8(self):
         if self.init_flake8 is not None:
