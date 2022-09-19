@@ -9,7 +9,7 @@ from src.sfilter.tools.radon import run_radon
 VERSION_ONE_PLUS = False
 
 
-def clean_before_test() -> None:
+def _clean_up_previous_run_results() -> None:
     """Clean up analysis logs before tests"""
     file_from_same_dir('flake8.txt').delete()
     file_from_same_dir('radon.json').delete()
@@ -20,7 +20,7 @@ def run_all(path):
 
     :param path:
     """
-    clean_before_test()
+    _clean_up_previous_run_results()
     if VERSION_ONE_PLUS:
         run_black(path)
     run_blue(path)
