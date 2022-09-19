@@ -42,7 +42,7 @@ sfilter_src:
 pip_build:
 	pip install -e .
 
-e2e_test: start_docker stop_clean_docker
+e2e_test: stop_clean_docker start_docker stop_clean_docker
 
 start_docker:
 	docker build -t sfilter .

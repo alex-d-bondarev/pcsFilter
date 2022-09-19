@@ -23,17 +23,26 @@ class SetUpHandler:
         self.c_updater.read(self.config_file.file_path())
 
     def _load_config_file(self, path):
+        self._try_load_setup_cfg(path)
+        self._create_setup_cfg_if_not_exists()
+
+    def _create_setup_cfg_if_not_exists(self):
+        if not self.config_file.exists():
+            self.config_file = self.config_file.write(NEW_CONFIG_FILE)
+
+    def _try_load_setup_cfg(self, path):
         if path:
-            wrapped_path = Path(path)
-            if path.endswith('.py'):
-                wrapped_path = wrapped_path.parent
-            wrapped_path = wrapped_path / 'setup.cfg'
+            wrapped_path = self._make_setup_cfg_path(path)
             self.config_file = file_from_path(path=wrapped_path)
         else:
             self.config_file = file_from_same_dir('setup.cfg')
 
-        if not self.config_file.exists():
-            self.config_file = self.config_file.write(NEW_CONFIG_FILE)
+    def _make_setup_cfg_path(self, path):
+        wrapped_path = Path(path)
+        if path.endswith('.py'):
+            wrapped_path = wrapped_path.parent
+        wrapped_path = wrapped_path / 'setup.cfg'
+        return wrapped_path
 
     def has_section(self, section: str) -> bool:
         """

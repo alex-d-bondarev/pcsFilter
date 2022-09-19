@@ -34,7 +34,7 @@ COPY pytest.ini $PROJECT_FOLDER
 
 RUN pip install -e .
 WORKDIR $PROJECT_FOLDER/actual
-RUN sfilter .
+RUN sfilter --output-path . .
 WORKDIR $PROJECT_FOLDER
 
 ENTRYPOINT ["pytest", "-vv", "--full-trace", "-m"]
