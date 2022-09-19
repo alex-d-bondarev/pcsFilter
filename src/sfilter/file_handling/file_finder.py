@@ -27,7 +27,7 @@ def find_file(name: str, path: Optional[str] = None) -> AFileHandler:
         return NonExistingFile(name)
 
 
-def find_file_by_path(path: Path) -> AFileHandler:
+def file_from_path(path: Path) -> AFileHandler:
     """Find file by given path and return it in the form of AFileHandler
 
     :param path:
@@ -39,10 +39,10 @@ def find_file_by_path(path: Path) -> AFileHandler:
         return NonExistingFile(str(path))
 
 
-def find_file_relative(name: str) -> AFileHandler:
+def file_from_same_dir(name: str) -> AFileHandler:
     """
     Find file in the current directory
     and return it in the form of AFileHandler
     """
     relative_file_path = Path('.') / name
-    return find_file_by_path(relative_file_path)
+    return file_from_path(relative_file_path)

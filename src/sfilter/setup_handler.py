@@ -4,8 +4,8 @@ from typing import Optional
 
 from configupdater import ConfigUpdater
 
-from src.sfilter.file_handling.file_finder import (find_file_by_path,
-                                                   find_file_relative)
+from src.sfilter.file_handling.file_finder import (file_from_path,
+                                                   file_from_same_dir)
 
 SECTION_NAME = 'sfilter'
 NEW_CONFIG_FILE = (
@@ -28,9 +28,9 @@ class SetUpHandler:
             if path.endswith('.py'):
                 wrapped_path = wrapped_path.parent
             wrapped_path = wrapped_path / 'setup.cfg'
-            self.config_file = find_file_by_path(path=wrapped_path)
+            self.config_file = file_from_path(path=wrapped_path)
         else:
-            self.config_file = find_file_relative('setup.cfg')
+            self.config_file = file_from_same_dir('setup.cfg')
 
         if not self.config_file.exists():
             self.config_file = self.config_file.write(NEW_CONFIG_FILE)

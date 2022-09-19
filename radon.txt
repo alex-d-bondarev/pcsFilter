@@ -58,9 +58,9 @@ src/sfilter/file_handling/existing_file.py
     [1m[37mM [0m44:4 ExistingFile.writable_file - [32mA[0m
     [1m[37mM [0m48:4 ExistingFile.write - [32mA[0m
 src/sfilter/file_handling/file_finder.py
+    [1m[35mF [0m30:0 file_from_path - [32mA[0m
+    [1m[35mF [0m42:0 file_from_same_dir - [32mA[0m
     [1m[35mF [0m9:0 find_file - [32mA[0m
-    [1m[35mF [0m30:0 find_file_by_path - [32mA[0m
-    [1m[35mF [0m42:0 find_file_relative - [32mA[0m
 src/sfilter/tools/black.py
     [1m[35mF [0m10:0 run_black - [32mA[0m
 src/sfilter/tools/flake8.py

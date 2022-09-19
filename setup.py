@@ -17,12 +17,12 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        "blue~=0.9.1",
-        "click~=8.0.3",
-        "ConfigUpdater~=3.0.1",
-        "flake8~=3.9.2",
-        "isort~=5.9.2",
-        "radon~=4.1.0",
+        "blue~=0.9.0",
+        "click~=8.0.0",
+        "ConfigUpdater~=3.0.0",
+        "flake8>=3.8,<5.0.0",
+        "isort~=5.10.0",
+        "radon~=5.1.0",
     ],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
