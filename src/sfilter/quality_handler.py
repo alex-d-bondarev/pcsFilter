@@ -8,7 +8,7 @@ from src.sfilter.setup_handler import SetUpHandler
 class QualityHandler:
     """Handle quality metrics"""
 
-    def __init__(self, path: str):
+    def __init__(self, path: str, output_path: Path):
         self.path = path
         self.config_is_in_root = False
 

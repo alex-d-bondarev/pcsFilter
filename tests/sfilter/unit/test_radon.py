@@ -11,7 +11,9 @@ from tests.sfilter.unit.fixtures import create_temp_file  # noqa
 def test_radon():
     """Test that radon is launched"""
     expected_content = 'Average complexity'
-    run_radon(str(Path(__file__).resolve()))
+    dir_path = str(Path(__file__).resolve())
+    output_path = Path('.')
+    run_radon(dir_path=dir_path, output_path=output_path)
 
     file_handler = find_file("radon.txt")
     actual_content = file_handler.get_content()

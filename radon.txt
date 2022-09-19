@@ -12,10 +12,10 @@ src/sfilter/quality_handler.py
     [1m[37mM [0m94:4 QualityHandler._save_result - [32mA[0m
     [1m[37mM [0m22:4 QualityHandler.compare_metrics - [32mA[0m
 src/sfilter/cli.py
-    [1m[35mF [0m8:0 main - [32mA[0m
+    [1m[35mF [0m17:0 main - [32mA[0m
 src/sfilter/app.py
-    [1m[35mF [0m12:0 _clean_up_previous_run_results - [32mA[0m
-    [1m[35mF [0m18:0 run_all - [32mA[0m
+    [1m[35mF [0m14:0 _clean_up_previous_run_results - [32mA[0m
+    [1m[35mF [0m23:0 run_all - [32mA[0m
 src/sfilter/setup_handler.py
     [1m[36mC [0m16:0 SetUpHandler - [32mA[0m
     [1m[37mM [0m19:4 SetUpHandler.__init__ - [32mA[0m
@@ -63,9 +63,9 @@ src/sfilter/file_handling/file_finder.py
 src/sfilter/tools/black.py
     [1m[35mF [0m10:0 run_black - [32mA[0m
 src/sfilter/tools/flake8.py
-    [1m[35mF [0m9:0 run_flake8 - [32mA[0m
+    [1m[35mF [0m10:0 run_flake8 - [32mA[0m
 src/sfilter/tools/radon.py
-    [1m[35mF [0m8:0 run_radon - [32mA[0m
+    [1m[35mF [0m9:0 run_radon - [32mA[0m
 src/sfilter/tools/blue.py
     [1m[35mF [0m8:0 run_blue - [32mA[0m
 src/sfilter/tools/isort.py
