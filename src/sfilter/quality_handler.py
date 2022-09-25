@@ -1,16 +1,38 @@
 import re
 from pathlib import Path
 
+import click
+
+from src.sfilter.exceptions import SFilterFailedCheckException
 from src.sfilter.file_handling.file_finder import file_from_path
 from src.sfilter.setup_handler import SetUpHandler
+
+FLAKE_8_MESSAGE = (
+    'Flake8 score was {init_flake8} '
+    'but became {new_flake8}. '
+    'You have introduced new pip8 error(s). '
+    'Please check flake8.txt for details. '
+    'Please fix all new and maybe some old errors.\n\n'
+)
+
+RADON_MESSAGE = (
+    'Radon cyclomatic complexity was {init_cc} '
+    'but became {new_cc}. '
+    'You have made code less maintainable. '
+    'Please check radon.txt for details. '
+    'Please improve maintainability back. '
+    'Appreciate if you make it even better.\n\n'
+)
 
 
 class QualityHandler:
     """Handle quality metrics"""
 
-    def __init__(self, path: str, output_path: Path):
-        self.path = path
-        self.output_path = output_path
+    def __init__(self, path: str, output_path: Path, strict: bool):
+        self._output_message = ''
+        self._output_path = output_path
+        self._path = path
+        self.strict = strict
 
     def compare_metrics(self):
         """Compare initial metrics with new metrics"""
@@ -19,13 +41,14 @@ class QualityHandler:
         self._load_previous_metrics()
         self._compare_flake8()
         self._compare_mi()
+        self._echo_sfilter_message()
         self._save_result()
 
     def _count_new_flake8_flags(self):
         last_line_does_not_count = 1
         flake8_content = self._load_content(file_name='flake8.txt')
         self.new_flake8 = (
-            len(flake8_content.split('\n')) - last_line_does_not_count
+                len(flake8_content.split('\n')) - last_line_does_not_count
         )
 
     def _calculate_new_cc_stats(self):
@@ -37,9 +60,9 @@ class QualityHandler:
                 self.new_cc = re.search(r'\((.*)\)', line).group(1)
 
     def _load_previous_metrics(self):
-        self.setup = SetUpHandler()
+        self.setup = SetUpHandler(self.strict)
         self.init_flake8 = self._load_init_value('flake8')
-        self.init_mi = self._load_init_value('mi')
+        self.init_cc = self._load_init_value('cc')
 
     def _load_init_value(self, key: str):
         value = self.setup.get(key)
@@ -49,30 +72,31 @@ class QualityHandler:
             return value
 
     def _load_content(self, file_name: str):
-        wrapped_path = self.output_path / file_name
+        wrapped_path = self._output_path / file_name
         file_content = file_from_path(wrapped_path).get_content()
         return file_content
 
     def _compare_flake8(self):
-        if self.init_flake8 is not None:
-            assert int(self.init_flake8) >= self.new_flake8, (
-                f'Flake8 score was {self.init_flake8} '
-                f'but became {self.new_flake8}. '
-                'You have introduced new pip8 errors. '
-                'Please check flake8.txt for details. '
-                'Please fix all new and maybe some old errors'
+        if self.init_flake8 is not None and \
+                int(self.init_flake8) < self.new_flake8:
+            self._output_message += FLAKE_8_MESSAGE.format(
+                init_flake8=self.init_flake8,
+                new_flake8=self.new_flake8,
             )
 
     def _compare_mi(self):
-        if self.init_mi is not None:
-            assert float(self.init_mi) <= self.new_cc, (
-                f'Radon maintainability index was {self.init_mi} '
-                f'but became {self.new_cc}. '
-                'You have made code less maintainable. '
-                'Please check radon.txt for details. '
-                'Please improve maintainability back. '
-                'Appreciate if you make it even better. '
+        if self.init_cc is not None and \
+                float(self.init_cc) < self.new_cc:
+            self._output_message += RADON_MESSAGE.format(
+                init_cc=self.init_cc,
+                new_cc=self.new_cc,
             )
+
+    def _echo_sfilter_message(self):
+        if self._output_message:
+            click.echo(self._output_message)
+            if self.strict:
+                raise SFilterFailedCheckException
 
     def _save_result(self):
         self.setup.set('flake8', str(self.new_flake8))

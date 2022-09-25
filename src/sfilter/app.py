@@ -20,7 +20,7 @@ def _clean_up_previous_run_results(output_path: Path) -> None:
     file_from_path(path=output_path / 'radon.json').delete()
 
 
-def run_all(path: str, output_path: str):
+def run_all(path: str, output_path: str, strict: bool):
     """Run all sfilter steps against given path
 
     :param path:
@@ -34,4 +34,4 @@ def run_all(path: str, output_path: str):
     run_isort(path)
     run_flake8(path, output_path)
     run_radon(path, output_path)
-    QualityHandler(path, output_path).compare_metrics()
+    QualityHandler(path, output_path, strict).compare_metrics()
