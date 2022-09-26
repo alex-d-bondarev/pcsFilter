@@ -17,7 +17,6 @@ def _prepare_for_analysis(output_path: Path) -> None:
     2. Create output folder if missing
 
     :param output_path:
-    :param strict:
     """
     file_from_path(path=output_path / 'flake8.txt').delete()
     file_from_path(path=output_path / 'radon.json').delete()
