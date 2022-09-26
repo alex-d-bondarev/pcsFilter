@@ -1,1 +1,0 @@
-./src/sfilter/setup_handler.py:7:1: F401 'src.sfilter.file_handling.file_finder.file_from_same_dir' imported but unused

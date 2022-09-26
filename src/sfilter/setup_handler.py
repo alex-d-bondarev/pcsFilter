@@ -4,8 +4,7 @@ from typing import Optional
 
 from configupdater import ConfigUpdater
 
-from src.sfilter.file_handling.file_finder import (file_from_path,
-                                                   file_from_same_dir)
+from src.sfilter.file_handling.file_finder import file_from_path
 
 SECTION_NAME = 'sfilter'
 NEW_CONFIG_FILE = (

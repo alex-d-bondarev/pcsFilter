@@ -19,15 +19,15 @@ src/sfilter/app.py
 src/sfilter/exceptions.py
     [1m[36mC [0m1:0 SFilterFailedCheckException - [32mA[0m
 src/sfilter/setup_handler.py
-    [1m[36mC [0m16:0 SetUpHandler - [32mA[0m
-    [1m[37mM [0m19:4 SetUpHandler.__init__ - [32mA[0m
-    [1m[37mM [0m30:4 SetUpHandler._create_setup_cfg_if_not_exists - [32mA[0m
-    [1m[37mM [0m26:4 SetUpHandler._load_config_file - [32mA[0m
-    [1m[37mM [0m34:4 SetUpHandler._try_load_setup_cfg - [32mA[0m
-    [1m[37mM [0m48:4 SetUpHandler.get - [32mA[0m
-    [1m[37mM [0m38:4 SetUpHandler.has_section - [32mA[0m
-    [1m[37mM [0m44:4 SetUpHandler.save - [32mA[0m
-    [1m[37mM [0m64:4 SetUpHandler.set - [32mA[0m
+    [1m[36mC [0m15:0 SetUpHandler - [32mA[0m
+    [1m[37mM [0m18:4 SetUpHandler.__init__ - [32mA[0m
+    [1m[37mM [0m29:4 SetUpHandler._create_setup_cfg_if_not_exists - [32mA[0m
+    [1m[37mM [0m25:4 SetUpHandler._load_config_file - [32mA[0m
+    [1m[37mM [0m33:4 SetUpHandler._try_load_setup_cfg - [32mA[0m
+    [1m[37mM [0m47:4 SetUpHandler.get - [32mA[0m
+    [1m[37mM [0m37:4 SetUpHandler.has_section - [32mA[0m
+    [1m[37mM [0m43:4 SetUpHandler.save - [32mA[0m
+    [1m[37mM [0m63:4 SetUpHandler.set - [32mA[0m
 src/sfilter/file_handling/abstract_file_handler.py
     [1m[36mC [0m7:0 AFileHandler - [32mA[0m
     [1m[37mM [0m11:4 AFileHandler.delete - [32mA[0m
