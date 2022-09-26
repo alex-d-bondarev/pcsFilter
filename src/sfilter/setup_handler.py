@@ -13,7 +13,7 @@ NEW_CONFIG_FILE = (
 
 
 class SetUpHandler:
-    """Handle setup.cfg when strict=True"""
+    """Handle setup.cfg"""
 
     def __init__(self, output_path: Path):
         self._output_path = output_path
