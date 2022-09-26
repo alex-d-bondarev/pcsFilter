@@ -48,7 +48,7 @@ class QualityHandler:
         last_line_does_not_count = 1
         flake8_content = self._load_content(file_name='flake8.txt')
         self.new_flake8 = (
-                len(flake8_content.split('\n')) - last_line_does_not_count
+            len(flake8_content.split('\n')) - last_line_does_not_count
         )
 
     def _calculate_new_cc_stats(self):
@@ -60,7 +60,7 @@ class QualityHandler:
                 self.new_cc = re.search(r'\((.*)\)', line).group(1)
 
     def _load_previous_metrics(self):
-        self.setup = SetUpHandler(self.strict)
+        self.setup = SetUpHandler(output_path=self._output_path)
         self.init_flake8 = self._load_init_value('flake8')
         self.init_cc = self._load_init_value('cc')
 
@@ -77,16 +77,18 @@ class QualityHandler:
         return file_content
 
     def _compare_flake8(self):
-        if self.init_flake8 is not None and \
-                int(self.init_flake8) < self.new_flake8:
+        if self.init_flake8 is not None and int(self.init_flake8) < int(
+            self.new_flake8
+        ):
             self._output_message += FLAKE_8_MESSAGE.format(
                 init_flake8=self.init_flake8,
                 new_flake8=self.new_flake8,
             )
 
     def _compare_mi(self):
-        if self.init_cc is not None and \
-                float(self.init_cc) < self.new_cc:
+        if self.init_cc is not None and float(self.init_cc) < float(
+            self.new_cc
+        ):
             self._output_message += RADON_MESSAGE.format(
                 init_cc=self.init_cc,
                 new_cc=self.new_cc,

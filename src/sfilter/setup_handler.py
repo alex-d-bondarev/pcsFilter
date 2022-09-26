@@ -14,10 +14,10 @@ NEW_CONFIG_FILE = (
 
 
 class SetUpHandler:
-    """Handle setup.cfg"""
+    """Handle setup.cfg when strict=True"""
 
-    def __init__(self, path: Optional[str] = None):
-        self._path = path
+    def __init__(self, output_path: Path):
+        self._output_path = output_path
         self.config = configparser.ConfigParser(allow_no_value=True)
         self._load_config_file()
         self.c_updater = ConfigUpdater()
@@ -32,18 +32,8 @@ class SetUpHandler:
             self.config_file = self.config_file.write(NEW_CONFIG_FILE)
 
     def _try_load_setup_cfg(self):
-        if self._path:
-            wrapped_path = self._make_setup_cfg_path()
-            self.config_file = file_from_path(path=wrapped_path)
-        else:
-            self.config_file = file_from_same_dir('setup.cfg')
-
-    def _make_setup_cfg_path(self):
-        wrapped_path = Path(self._path)
-        if self._path.endswith('.py'):
-            wrapped_path = wrapped_path.parent
-        wrapped_path = wrapped_path / 'setup.cfg'
-        return wrapped_path
+        path = self._output_path / 'setup.cfg'
+        self.config_file = file_from_path(path=path)
 
     def has_section(self, section: str) -> bool:
         """

@@ -37,7 +37,7 @@ sfilter_src:
 	@echo "Run sfilter"
 	pyenv local 3.10.6
 	$(MAKE) pip_build
-	sfilter ./src
+	sfilter -s ./src
 
 pip_build:
 	pip install -e .
@@ -49,7 +49,7 @@ start_docker:
 	docker run -it --name sfilter-container sfilter e2e
 
 stop_clean_docker:
-	docker stop `docker ps -aq`
-	docker rm `docker ps -aq`
-	docker rmi `docker image ls -aq`
-	docker volume prune -f `docker volume ls -a`
+	docker stop `docker ps -aq` || true
+	docker rm `docker ps -aq` || true
+	docker rmi `docker image ls -aq` || true
+	docker volume prune -f `docker volume ls -a` || true
