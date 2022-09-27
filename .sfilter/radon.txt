@@ -15,7 +15,7 @@ src/sfilter/cli.py
     [1m[35mF [0m18:0 main - [32mA[0m
 src/sfilter/app.py
     [1m[35mF [0m14:0 _prepare_for_analysis - [32mA[0m
-    [1m[35mF [0m28:0 run_all - [32mA[0m
+    [1m[35mF [0m27:0 run_all - [32mA[0m
 src/sfilter/exceptions.py
     [1m[36mC [0m1:0 SFilterFailedCheckException - [32mA[0m
 src/sfilter/setup_handler.py
