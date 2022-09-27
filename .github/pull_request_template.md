@@ -8,5 +8,5 @@ _PR description_
 - [ ] PR is linked to an issue in the Development tab
 - [ ] `make test_all` was executed before pushing the changes
 
-`*` Tests for implementation details are not required.
+`*` Tests for implementation details are not required (just click the box).
 Tests for a new/updated behaviour are mandatory.
