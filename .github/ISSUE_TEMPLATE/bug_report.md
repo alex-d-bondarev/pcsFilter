@@ -2,12 +2,14 @@
 name: Bug report
 about: Create a report to help improve sfilter
 title: "[BUG] _Title_"
-labels: ''
+labels: 'bug'
 assignees: ''
 
 ---
 
-_Please replace the text in italics_
+_Please replace the text in italics and click the boxes_
+
+[ ] I agree with the [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md)
 
 **Description**
 _What and why is something a bug?_

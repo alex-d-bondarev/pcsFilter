@@ -1,15 +1,15 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: "[FEATURE] _Title_"
-labels: ''
+title: "[FEATURE_REQUEST] _Title_"
+labels: 'feature_request'
 assignees: ''
 
 ---
 
 _Please replace the text in italics and click the boxes_
 
-[ ] I have read _TBD link_
+[ ] I agree with the [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md)
 
 **Is your feature request related to a problem? Please describe.**
 _I experience the ... problem._
