@@ -1,5 +1,5 @@
 # pcsFilter (Pre-Alpha)
-Tool for filtering out stinky/smelling code
+Tool for filtering out **P**ython **C**ode **S**mells
 
 ## Usage
 ```shell
