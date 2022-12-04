@@ -9,7 +9,7 @@ assignees: ''
 
 _Please replace the text in italics and click the boxes_
 
-[ ] I agree with the [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md)
+- [ ] I agree with the [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md)
 
 **Is your feature request related to a problem? Please describe.**
 _I experience the ... problem._

@@ -9,7 +9,7 @@ assignees: ''
 
 _Please replace the text in italics and click the boxes_
 
-[ ] I agree with the [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md)
+- [ ] I agree with the [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md)
 
 **Question**
 _Please put your question here_
