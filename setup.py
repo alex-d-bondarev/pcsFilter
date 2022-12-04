@@ -4,8 +4,8 @@ with open("README.md", "r") as readme:
     long_description = readme.read()
 
 setup(
-    name="sfilter",
-    version="0.1.1",
+    name="pcsFilter",
+    version="0.2.0",
     python_requires=">=3.7",
     author="Sasha Bondarev (Oleksandr)",
     author_email="alex.d.bondarev@gmail.com",
@@ -13,7 +13,7 @@ setup(
     description="Tool for filtering out stinky/smelling code",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/alex-d-bondarev/sfilter",
+    url="https://github.com/alex-d-bondarev/pcsFilter",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -31,14 +31,14 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10"
+        "Programming Language :: Python :: 3.10",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Quality Assurance",
     ],
     entry_points={
         "console_scripts": [
-            "sfilter=src.sfilter.cli:main",
+            "pcsFilter=src.pcsFilter.cli:main",
         ]
     },
 )

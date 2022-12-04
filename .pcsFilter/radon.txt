@@ -1,24 +1,24 @@
-src/sfilter/quality_handler.py
+src/pcsFilter/quality_handler.py
     [1m[36mC [0m28:0 QualityHandler - [32mA[0m
     [1m[37mM [0m31:4 QualityHandler.__init__ - [32mA[0m
     [1m[37mM [0m54:4 QualityHandler._calculate_new_cc_stats - [32mA[0m
     [1m[37mM [0m79:4 QualityHandler._compare_flake8 - [32mA[0m
     [1m[37mM [0m88:4 QualityHandler._compare_mi - [32mA[0m
     [1m[37mM [0m47:4 QualityHandler._count_new_flake8_flags - [32mA[0m
-    [1m[37mM [0m97:4 QualityHandler._echo_sfilter_message - [32mA[0m
+    [1m[37mM [0m97:4 QualityHandler._echo_pcsFilter_message - [32mA[0m
     [1m[37mM [0m74:4 QualityHandler._load_content - [32mA[0m
     [1m[37mM [0m67:4 QualityHandler._load_init_value - [32mA[0m
     [1m[37mM [0m62:4 QualityHandler._load_previous_metrics - [32mA[0m
     [1m[37mM [0m103:4 QualityHandler._save_result - [32mA[0m
     [1m[37mM [0m37:4 QualityHandler.compare_metrics - [32mA[0m
-src/sfilter/cli.py
+src/pcsFilter/cli.py
     [1m[35mF [0m18:0 main - [32mA[0m
-src/sfilter/app.py
+src/pcsFilter/app.py
     [1m[35mF [0m14:0 _prepare_for_analysis - [32mA[0m
     [1m[35mF [0m27:0 run_all - [32mA[0m
-src/sfilter/exceptions.py
+src/pcsFilter/exceptions.py
     [1m[36mC [0m1:0 SFilterFailedCheckException - [32mA[0m
-src/sfilter/setup_handler.py
+src/pcsFilter/setup_handler.py
     [1m[36mC [0m15:0 SetUpHandler - [32mA[0m
     [1m[37mM [0m18:4 SetUpHandler.__init__ - [32mA[0m
     [1m[37mM [0m29:4 SetUpHandler._create_setup_cfg_if_not_exists - [32mA[0m
@@ -28,7 +28,7 @@ src/sfilter/setup_handler.py
     [1m[37mM [0m37:4 SetUpHandler.has_section - [32mA[0m
     [1m[37mM [0m43:4 SetUpHandler.save - [32mA[0m
     [1m[37mM [0m63:4 SetUpHandler.set - [32mA[0m
-src/sfilter/file_handling/abstract_file_handler.py
+src/pcsFilter/file_handling/abstract_file_handler.py
     [1m[36mC [0m7:0 AFileHandler - [32mA[0m
     [1m[37mM [0m11:4 AFileHandler.delete - [32mA[0m
     [1m[37mM [0m16:4 AFileHandler.exists - [32mA[0m
@@ -37,7 +37,7 @@ src/sfilter/file_handling/abstract_file_handler.py
     [1m[37mM [0m33:4 AFileHandler.name - [32mA[0m
     [1m[37mM [0m38:4 AFileHandler.writable_file - [32mA[0m
     [1m[37mM [0m43:4 AFileHandler.write - [32mA[0m
-src/sfilter/file_handling/non_existing_file.py
+src/pcsFilter/file_handling/non_existing_file.py
     [1m[36mC [0m8:0 NonExistingFile - [32mA[0m
     [1m[37mM [0m11:4 NonExistingFile.__init__ - [32mA[0m
     [1m[37mM [0m14:4 NonExistingFile.delete - [32mA[0m
@@ -47,7 +47,7 @@ src/sfilter/file_handling/non_existing_file.py
     [1m[37mM [0m30:4 NonExistingFile.name - [32mA[0m
     [1m[37mM [0m34:4 NonExistingFile.writable_file - [32mA[0m
     [1m[37mM [0m38:4 NonExistingFile.write - [32mA[0m
-src/sfilter/file_handling/existing_file.py
+src/pcsFilter/file_handling/existing_file.py
     [1m[36mC [0m10:0 ExistingFile - [32mA[0m
     [1m[37mM [0m13:4 ExistingFile.__init__ - [32mA[0m
     [1m[37mM [0m18:4 ExistingFile.delete - [32mA[0m
@@ -57,19 +57,19 @@ src/sfilter/file_handling/existing_file.py
     [1m[37mM [0m40:4 ExistingFile.name - [32mA[0m
     [1m[37mM [0m44:4 ExistingFile.writable_file - [32mA[0m
     [1m[37mM [0m48:4 ExistingFile.write - [32mA[0m
-src/sfilter/file_handling/file_finder.py
+src/pcsFilter/file_handling/file_finder.py
     [1m[35mF [0m30:0 file_from_path - [32mA[0m
     [1m[35mF [0m42:0 file_from_same_dir - [32mA[0m
     [1m[35mF [0m9:0 find_file - [32mA[0m
-src/sfilter/tools/black.py
+src/pcsFilter/tools/black.py
     [1m[35mF [0m10:0 run_black - [32mA[0m
-src/sfilter/tools/flake8.py
+src/pcsFilter/tools/flake8.py
     [1m[35mF [0m10:0 run_flake8 - [32mA[0m
-src/sfilter/tools/radon.py
+src/pcsFilter/tools/radon.py
     [1m[35mF [0m9:0 run_radon - [32mA[0m
-src/sfilter/tools/blue.py
+src/pcsFilter/tools/blue.py
     [1m[35mF [0m8:0 run_blue - [32mA[0m
-src/sfilter/tools/isort.py
+src/pcsFilter/tools/isort.py
     [1m[35mF [0m9:0 run_isort - [32mA[0m
 
 59 blocks (classes, functions, methods) analyzed.

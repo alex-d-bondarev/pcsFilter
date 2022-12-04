@@ -1,7 +1,7 @@
 # Used for e2e test
 FROM python:3.10.6-slim as base
 
-ARG PROJECT_FOLDER=/sfilter
+ARG PROJECT_FOLDER=/pcsFilter
 
 RUN mkdir -p $PROJECT_FOLDER
 WORKDIR $PROJECT_FOLDER
@@ -25,16 +25,16 @@ COPY --from=updates $PROJECT_FOLDER/.venv $PROJECT_FOLDER/.venv
 ENV PATH="${PROJECT_FOLDER}/.venv/bin:$PATH"
 
 COPY ./src $PROJECT_FOLDER/src
-COPY ./tests/sfilter/e2e/actual $PROJECT_FOLDER/actual
-COPY ./tests/sfilter/e2e/expected $PROJECT_FOLDER/expected
-COPY ./tests/sfilter/e2e/test_sfilter_results.py $PROJECT_FOLDER/test_sfilter_results.py
+COPY tests/pcsFilter/e2e/actual $PROJECT_FOLDER/actual
+COPY tests/pcsFilter/e2e/expected $PROJECT_FOLDER/expected
+COPY tests/pcsFilter/e2e/test_pcsFilter_results.py $PROJECT_FOLDER/test_pcsFilter_results.py
 COPY setup.py $PROJECT_FOLDER
 COPY README.md $PROJECT_FOLDER
 COPY pytest.ini $PROJECT_FOLDER
 
 RUN pip install -e .
 WORKDIR $PROJECT_FOLDER/actual
-RUN sfilter --output-path . .
+RUN pcsFilter --output-path . .
 WORKDIR $PROJECT_FOLDER
 
 ENTRYPOINT ["pytest", "-vv", "--full-trace", "-m"]

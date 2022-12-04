@@ -1,12 +1,12 @@
 from pathlib import Path
 
-from src.sfilter.file_handling.file_finder import file_from_path
-from src.sfilter.quality_handler import QualityHandler
-from src.sfilter.tools.black import run_black
-from src.sfilter.tools.blue import run_blue
-from src.sfilter.tools.flake8 import run_flake8
-from src.sfilter.tools.isort import run_isort
-from src.sfilter.tools.radon import run_radon
+from src.pcsFilter.file_handling.file_finder import file_from_path
+from src.pcsFilter.quality_handler import QualityHandler
+from src.pcsFilter.tools.black import run_black
+from src.pcsFilter.tools.blue import run_blue
+from src.pcsFilter.tools.flake8 import run_flake8
+from src.pcsFilter.tools.isort import run_isort
+from src.pcsFilter.tools.radon import run_radon
 
 VERSION_ONE_PLUS = False
 
@@ -25,7 +25,7 @@ def _prepare_for_analysis(output_path: Path) -> None:
 
 
 def run_all(path: str, output_path: str, strict: bool):
-    """Run all sfilter steps against given path
+    """Run all pcsFilter steps against given path
 
     :param strict:
     :param path:

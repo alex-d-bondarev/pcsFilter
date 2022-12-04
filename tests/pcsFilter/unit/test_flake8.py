@@ -2,9 +2,9 @@ from pathlib import Path
 
 import pytest  # noqa
 
-from src.sfilter.file_handling.file_finder import find_file
-from src.sfilter.tools.flake8 import run_flake8
-from tests.sfilter.unit.fixtures import create_temp_file  # noqa
+from src.pcsFilter.file_handling.file_finder import find_file
+from src.pcsFilter.tools.flake8 import run_flake8
+from tests.pcsFilter.unit.fixtures import create_temp_file  # noqa
 
 
 @pytest.mark.parametrize(

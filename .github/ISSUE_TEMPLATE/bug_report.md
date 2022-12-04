@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help improve sfilter
+about: Create a report to help improve pcsFilter
 title: "[BUG] _Title_"
 labels: 'bug'
 assignees: ''
@@ -9,13 +9,13 @@ assignees: ''
 
 _Please replace the text in italics and click the boxes_
 
-[ ] I agree with the [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md)
+- [ ] I agree with the [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md)
 
 **Description**
 _What and why is something a bug?_
 
 **Version**
-_Which sfilter version did you use when you experienced the bug?_
+_Which pcsFilter version did you use when you experienced the bug?_
 
 **Steps to Reproduce**
 Steps to reproduce the bug:

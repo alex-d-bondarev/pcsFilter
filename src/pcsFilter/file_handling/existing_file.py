@@ -3,8 +3,8 @@ import os
 from pathlib import Path
 from typing import TextIO
 
-from src.sfilter.file_handling import non_existing_file
-from src.sfilter.file_handling.abstract_file_handler import AFileHandler
+from src.pcsFilter.file_handling import non_existing_file
+from src.pcsFilter.file_handling.abstract_file_handler import AFileHandler
 
 
 class ExistingFile(AFileHandler):
