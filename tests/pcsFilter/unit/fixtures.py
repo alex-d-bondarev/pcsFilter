@@ -1,7 +1,7 @@
 import pytest  # noqa
 
-from src.sfilter.file_handling.abstract_file_handler import AFileHandler
-from src.sfilter.file_handling.file_finder import find_file
+from src.pcsFilter.file_handling.abstract_file_handler import AFileHandler
+from src.pcsFilter.file_handling.file_finder import find_file
 
 
 @pytest.fixture

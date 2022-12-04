@@ -4,11 +4,11 @@ from typing import Optional
 
 from configupdater import ConfigUpdater
 
-from src.sfilter.file_handling.file_finder import file_from_path
+from src.pcsFilter.file_handling.file_finder import file_from_path
 
-SECTION_NAME = 'sfilter'
+SECTION_NAME = 'pcsFilter'
 NEW_CONFIG_FILE = (
-    "[sfilter]\n# Goal is '0'\nflake8 = -1\n# Goal is '0'\ncc = -1\n"
+    "[pcsFilter]\n# Goal is '0'\nflake8 = -1\n# Goal is '0'\ncc = -1\n"
 )
 
 
@@ -45,7 +45,7 @@ class SetUpHandler:
         self.c_updater.write(self.config_file.writable_file())
 
     def get(self, param: str) -> Optional[str]:
-        """Get param from 'sfilter' section
+        """Get param from 'pcsFilter' section
 
         :param param:
         :return: param value or None
@@ -61,7 +61,7 @@ class SetUpHandler:
             return option.value
 
     def set(self, param: str, value: str) -> None:
-        """Set 'sfilter' param with given value
+        """Set 'pcsFilter' param with given value
 
         :param param:
         :param value:

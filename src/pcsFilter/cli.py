@@ -1,6 +1,6 @@
 import click
 
-from src.sfilter.app import run_all
+from src.pcsFilter.app import run_all
 
 
 @click.command()
@@ -10,15 +10,15 @@ from src.sfilter.app import run_all
     '-0',
     required=False,
     type=str,
-    default='.sfilter',
+    default='.pcsFilter',
     show_default=True,
     help='Output path for generated files',
 )
 @click.option('--strict', '-s', is_flag=True, help='Turn on strict mode')
 def main(path, output_path, strict):
     """
-    sfilter is a tool that refactors and runs static code analyses.
-    sfilter goal is to improve code maintainability
+    pcsFilter is a tool that refactors and runs static code analyses.
+    pcsFilter goal is to improve code maintainability
     and prevent its degradation.
     """
     run_all(path, output_path, strict)

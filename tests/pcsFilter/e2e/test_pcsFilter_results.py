@@ -6,11 +6,11 @@ from pathlib import Path
 
 import pytest
 
-from src.sfilter.file_handling.existing_file import ExistingFile
+from src.pcsFilter.file_handling.existing_file import ExistingFile
 
 
 @pytest.mark.e2e
-def test_sfilter_results():
+def test_pcsFilter_results():
     actual_dir = Path('./actual')
     expected_dir = Path('./expected')
 

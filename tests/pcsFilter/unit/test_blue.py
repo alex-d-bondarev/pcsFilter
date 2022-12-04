@@ -1,7 +1,7 @@
 import pytest  # noqa
 
-from src.sfilter.tools.blue import run_blue
-from tests.sfilter.unit.fixtures import create_temp_file  # noqa
+from src.pcsFilter.tools.blue import run_blue
+from tests.pcsFilter.unit.fixtures import create_temp_file  # noqa
 
 
 @pytest.mark.parametrize(

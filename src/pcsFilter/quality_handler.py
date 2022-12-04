@@ -3,9 +3,9 @@ from pathlib import Path
 
 import click
 
-from src.sfilter.exceptions import SFilterFailedCheckException
-from src.sfilter.file_handling.file_finder import file_from_path
-from src.sfilter.setup_handler import SetUpHandler
+from src.pcsFilter.exceptions import SFilterFailedCheckException
+from src.pcsFilter.file_handling.file_finder import file_from_path
+from src.pcsFilter.setup_handler import SetUpHandler
 
 FLAKE_8_MESSAGE = (
     'Flake8 score was {init_flake8} '
@@ -41,7 +41,7 @@ class QualityHandler:
         self._load_previous_metrics()
         self._compare_flake8()
         self._compare_mi()
-        self._echo_sfilter_message()
+        self._echo_pcsFilter_message()
         self._save_result()
 
     def _count_new_flake8_flags(self):
@@ -94,7 +94,7 @@ class QualityHandler:
                 new_cc=self.new_cc,
             )
 
-    def _echo_sfilter_message(self):
+    def _echo_pcsFilter_message(self):
         if self._output_message:
             click.echo(self._output_message)
             if self.strict:

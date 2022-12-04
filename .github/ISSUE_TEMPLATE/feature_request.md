@@ -15,7 +15,7 @@ _Please replace the text in italics and click the boxes_
 _I experience the ... problem._
 
 **Describe the solution you'd like**
-_This is how I expect sfilter to fix my problem_
+_This is how I expect pcsFilter to fix my problem_
 
 **API**
 _I expect this <command/flag> to fix described problem_

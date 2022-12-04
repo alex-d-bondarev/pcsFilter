@@ -2,7 +2,7 @@
 
 default:
 	@echo "\nThe following commands are supported for general usage:\n"
-	@echo "pip_build \t # Build sfilter locally via pip"
+	@echo "pip_build \t # Build pcsFilter locally via pip"
 	@echo "clean \t\t # Clean the project"
 	@echo "install \t # Install project dependencies"
 	@echo "reinstall \t # Clean the project and install from scratch"
@@ -19,7 +19,7 @@ install:
 	pipenv install
 
 
-test_all: tox e2e_test sfilter_src
+test_all: tox e2e_test pcsFilter_src
 
 tox:
 	@echo "Prepare environment"
@@ -33,11 +33,11 @@ quick_test:
 	pyenv local 3.10.6
 	PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pytest -v -m "unit or integration"
 
-sfilter_src:
-	@echo "Run sfilter"
+pcsFilter_src:
+	@echo "Run pcsFilter"
 	pyenv local 3.10.6
 	$(MAKE) pip_build
-	sfilter -s ./src
+	pcsFilter -s ./src
 
 pip_build:
 	pip install -e .
@@ -45,11 +45,10 @@ pip_build:
 e2e_test: stop_clean_docker start_docker stop_clean_docker
 
 start_docker:
-	docker build -t sfilter .
-	docker run -it --name sfilter-container sfilter e2e
+	docker build -t pcsfilter .
+	docker run -it --name pcsfilter-container pcsfilter e2e
 
 stop_clean_docker:
-	docker stop `docker ps -aq` || true
-	docker rm `docker ps -aq` || true
-	docker rmi `docker image ls -aq` || true
-	docker volume prune -f `docker volume ls -a` || true
+	docker stop pcsfilter || true
+	docker rm pcsfilter || true
+	docker rmi pcsfilter || true

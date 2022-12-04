@@ -1,10 +1,10 @@
-# sfilter (Pre-Alpha)
+# pcsFilter (Pre-Alpha)
 Tool for filtering out stinky/smelling code
 
 ## Usage
 ```shell
-pip install sfilter
-sfilter <path to project or file>
+pip install pcsFilter
+pcsFilter <path to project or file>
 ```
 
 ## Contributing
