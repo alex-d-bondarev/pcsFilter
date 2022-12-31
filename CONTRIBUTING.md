@@ -129,6 +129,7 @@ Maintainers need to do the following to push out a release:
     ```
 * Upload to pypi
     ```shell
+    twine check dist/*
     twine upload dist/*
     ```
 
