@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report to help improve pcsFilter
 title: "[BUG] _Title_"
-labels: 'bug'
+labels: ["bug", "requires_review"]
 assignees: ''
 
 ---
