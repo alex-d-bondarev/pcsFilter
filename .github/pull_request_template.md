@@ -12,7 +12,8 @@ _PR description_
 
 **Additional notes**
 - (*) You are not required to add new tests for implementation details 
-  or documentation changes (simply click the `I have added tests`).
+  or documentation changes. 
 - (*) PR with a new/updated behaviour should include new or updated tests.
+  Just tick the box if not applicable.
 - (**) Not applicable for security updates.
-- (***) Only required when code is added/updated.
+- (***) Only required when code is added/updated. Just tick the box if not applicable.
