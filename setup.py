@@ -5,10 +5,10 @@ with open("README.md", "r") as readme:
 
 setup(
     name="pcsFilter",
-    version="0.2.0",
+    version="0.2.1",
     python_requires=">=3.7",
     author="Sasha Bondarev (Oleksandr)",
-    author_email="alex.d.bondarev@gmail.com",
+    author_email="github.pcsfilter@gmail.com",
     license="MIT",
     description="Tool for filtering out stinky/smelling code",
     long_description=long_description,
