@@ -49,6 +49,5 @@ start_docker:
 	docker run -it --name pcsfilter-container pcsfilter e2e
 
 stop_clean_docker:
-	docker stop pcsfilter || true
-	docker rm pcsfilter || true
-	docker rmi pcsfilter || true
+	docker stop pcsfilter-container || true
+	docker rm pcsfilter-container || true
