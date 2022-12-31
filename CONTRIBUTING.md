@@ -8,6 +8,15 @@ There are multiple options:
 3. [Ask a question](https://github.com/alex-d-bondarev/pcsFilter/issues/new?template=question.md).
 4. Help fixing reported issue. See details below:
 
+### Issue workflow
+`requires_review` -> `task`
+                  \
+                   > `wontfix`
+
+All new issues will be created with `requires_review` label.
+This labels should later be replaced with `task` for issues that will be worked on.
+Otherwise `wontfix` label will be applied.
+
 ## Help fixing reported issue.
 There are multiple ways you can help with reported issues:
 1. No coding help:

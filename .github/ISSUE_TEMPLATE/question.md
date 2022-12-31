@@ -2,7 +2,7 @@
 name: Question
 about: Ask a question
 title: "[Question] _Title_"
-labels: 'question'
+labels: ["question", "requires_review"]
 assignees: ''
 
 ---
