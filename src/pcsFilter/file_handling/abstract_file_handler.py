@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from pathlib import Path
 from typing import TextIO
 
 
@@ -18,7 +19,7 @@ class AFileHandler(ABC):
         pass
 
     @abstractmethod
-    def file_path(self) -> str:
+    def file_path(self) -> Path:
         """return True if file exists, else False"""
         pass
 

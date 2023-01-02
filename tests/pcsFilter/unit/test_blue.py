@@ -14,7 +14,7 @@ def test_blue(create_temp_file):
     """Test that black is launched"""
     expected = "import os\n"
 
-    run_blue(create_temp_file.name())
+    run_blue(str(create_temp_file.file_path()))
     actual = create_temp_file.get_content()
 
     assert actual == expected

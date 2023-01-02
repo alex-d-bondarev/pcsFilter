@@ -19,7 +19,7 @@ class NonExistingFile(AFileHandler):
         """:return: False (it does not exist)"""
         return False
 
-    def file_path(self) -> str:
+    def file_path(self) -> Path:
         """This file does not exist. Raise exception"""
         raise FileNotFoundError(self.name)
 

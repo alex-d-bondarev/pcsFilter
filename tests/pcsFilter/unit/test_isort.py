@@ -14,7 +14,7 @@ def test_isort(create_temp_file):
     """Test that isort is launched"""
     expected = "import os\nimport pathlib\n"
 
-    run_isort(create_temp_file.name())
+    run_isort(str(create_temp_file.file_path()))
     actual = create_temp_file.get_content()
 
     assert actual == expected

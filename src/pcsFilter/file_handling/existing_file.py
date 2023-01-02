@@ -1,5 +1,4 @@
 import logging
-import os
 from pathlib import Path
 from typing import TextIO
 
@@ -27,9 +26,9 @@ class ExistingFile(AFileHandler):
         """:return: True (it exists)"""
         return True
 
-    def file_path(self) -> str:
+    def file_path(self) -> Path:
         """Self evident"""
-        return os.fspath(self.path_to_file.resolve())
+        return self.path_to_file
 
     def get_content(self) -> str:
         """Get content of the file that was given in constructor
