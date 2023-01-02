@@ -1,8 +1,6 @@
-from pathlib import Path
-
 import pytest  # noqa
 
-from src.pcsFilter.file_handling.file_finder import find_file
+from src.pcsFilter.file_handling.file_finder import file_from_path
 from src.pcsFilter.tools.flake8 import run_flake8
 from tests.pcsFilter.unit.fixtures import create_temp_file  # noqa
 
@@ -17,14 +15,11 @@ def test_flake8(create_temp_file):
     """Test that flake8 is launched"""
     error1 = "F401 'os' imported but unused"
     error2 = "W292 no newline at end of file"
-    path = create_temp_file.name()
-    output_path = Path('.')
+    path = create_temp_file.file_path()
+    output_path = create_temp_file.file_path().parent
 
-    run_flake8(path=path, output_path=output_path)
-
-    file_handler = find_file("flake8.txt")
-    actual_content = file_handler.get_content()
-    file_handler.delete()
+    run_flake8(path=str(path), output_path=output_path)
+    actual_content = file_from_path(output_path / 'flake8.txt').get_content()
 
     assert error1 in actual_content
     assert error2 in actual_content
