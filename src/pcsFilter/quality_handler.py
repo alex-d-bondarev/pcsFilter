@@ -1,9 +1,9 @@
 import re
+import sys
 from pathlib import Path
 
 import click
 
-from src.pcsFilter.exceptions import SFilterFailedCheckException
 from src.pcsFilter.file_handling.file_finder import file_from_path
 from src.pcsFilter.setup_handler import SetUpHandler
 
@@ -94,11 +94,11 @@ class QualityHandler:
                 new_cc=self.new_cc,
             )
 
-    def _echo_pcsFilter_message(self):
+    def _echo_pcsFilter_message(self):  # noqa
         if self._output_message:
             click.echo(self._output_message)
             if self.strict:
-                raise SFilterFailedCheckException
+                sys.exit(1)
 
     def _save_result(self):
         self.setup.set('flake8', str(self.new_flake8))

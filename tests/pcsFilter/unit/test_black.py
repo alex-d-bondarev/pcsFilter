@@ -14,7 +14,7 @@ def test_black(create_temp_file):
     """Test that black is launched"""
     expected = "import os\n"
 
-    run_black(path=create_temp_file.file_path())
+    run_black(path=str(create_temp_file.file_path()))
     actual = create_temp_file.get_content()
 
     assert actual == expected
