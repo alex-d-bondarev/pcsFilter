@@ -7,7 +7,7 @@ from src.pcsFilter.app import run_all
 @click.argument('path')
 @click.option(
     '--output-path',
-    '-0',
+    '-o',
     required=False,
     type=str,
     default='.pcsFilter',
