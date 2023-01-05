@@ -40,7 +40,7 @@ class QualityHandler:
         self._calculate_new_cc_stats()
         self._load_previous_metrics()
         self._compare_flake8()
-        self._compare_mi()
+        self._compare_cc()
         self._echo_pcsFilter_message()
         self._save_result()
 
@@ -85,7 +85,7 @@ class QualityHandler:
                 new_flake8=self.new_flake8,
             )
 
-    def _compare_mi(self):
+    def _compare_cc(self):
         if self.init_cc is not None and float(self.init_cc) < float(
             self.new_cc
         ):
