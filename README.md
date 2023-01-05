@@ -1,12 +1,6 @@
-# pcsFilter (Pre-Alpha)
-Tool for filtering out **P**ython **C**ode **S**mells.
-
-The idea is to periodically format the code via _blue_ and _isort_.
-The formatted code is checked for code style via _flake8_ 
-and cyclomatic complexity (cc) via _radon_. 
-The _pcsFilter_ reports new code style violations and growing cc score, 
-and fails when "strict" flag is applied
-
+# pcsFilter
+Tool for filtering out **P**ython **C**ode **S**mells by 
+formatting the code and checking the code style after.
 
 ---
 
@@ -31,10 +25,14 @@ is applied on top:
       - _pcsFilter_ will exit with status = 1
 4. New scores and their details will be saved to a default or given output path.
 
-## Usage
-### Quick
+## Installation
 ```shell
 pip install pcsFilter
+```
+
+## Usage
+### Base
+```shell
 pcsFilter <path to project or file>
 ```
 
@@ -47,14 +45,13 @@ pcsFilter --strict <path to project or file>
 ```
 
 ### Override output path
-Use this option when default path to `./.pcsFilter` is not acceptable.
+Default output path is `./.pcsFilter`. It can be overriden the following way:
 ```shell
 pcsFilter -o <new output path> <path to project or file>
 pcsFilter --output-path <new output path> <path to project or file>
 ```
 
-### Help
-Print help message
+### Help message
 ```shell
 pcsFilter --help
 ```
