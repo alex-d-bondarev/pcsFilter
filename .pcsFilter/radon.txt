@@ -2,8 +2,8 @@ src/pcsFilter/quality_handler.py
     [1m[36mC [0m28:0 QualityHandler - [32mA[0m
     [1m[37mM [0m31:4 QualityHandler.__init__ - [32mA[0m
     [1m[37mM [0m54:4 QualityHandler._calculate_new_cc_stats - [32mA[0m
+    [1m[37mM [0m88:4 QualityHandler._compare_cc - [32mA[0m
     [1m[37mM [0m79:4 QualityHandler._compare_flake8 - [32mA[0m
-    [1m[37mM [0m88:4 QualityHandler._compare_mi - [32mA[0m
     [1m[37mM [0m47:4 QualityHandler._count_new_flake8_flags - [32mA[0m
     [1m[37mM [0m97:4 QualityHandler._echo_pcsFilter_message - [32mA[0m
     [1m[37mM [0m74:4 QualityHandler._load_content - [32mA[0m
