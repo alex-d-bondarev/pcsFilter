@@ -129,6 +129,7 @@ Maintainers need to do the following to push out a release:
 * Prepare to publish the project
     ```shell
     PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python setup.py bdist_wheel
+    PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python setup.py develop
     PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pip3 install -e .
     pipenv shell
     pcsFilter src/pcsFilter
