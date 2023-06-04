@@ -42,14 +42,12 @@ git checkout -b i12-use-isort-api
 **NOTE**: You can skip this section when documentation is changed only.
 
 1. [make](https://www.gnu.org/software/make/) is installed
-2. [pipenv](https://pipenv.pypa.io/en/latest/#install-pipenv-today) is installed
-3. [pyenv](https://github.com/pyenv/pyenv#installation) 
-   is installed with the following python versions:
-     - 3.7.12
-     - 3.8.12
-     - 3.9.1 
-     - 3.10.6
-4. Install the development dependencies:
+1. [pipenv](https://pipenv.pypa.io/en/latest/#install-pipenv-today) is installed
+1. [nox](https://nox.thea.codes/en/stable/tutorial.html) is installed
+1. [pyenv](https://github.com/pyenv/pyenv#installation) is installed.
+   - Install python versions `3.7`, `3.8`, `3.9`, `3.10`, like `pipenv install X.Y.Z`
+   - Set pyenv with installed versions, like `pyenv local 3.7.W 3.8.X 3.9.Y 3.10.Z`
+1. Install the development dependencies:
    ```shell
    make install
    ```
@@ -121,12 +119,13 @@ met.
 ### Shipping a release (maintainers only)
 Maintainers need to do the following to push out a release:
 
-* Switch to the master branch and make sure it's up to date.
-* Test locally
+1. Switch to the master branch and make sure it's up to date.
+1. [Optional] Bump up the version in the `setup.py`
+1. Test locally
     ```shell
     pip install -e .
     ```
-* Prepare to publish the project
+1. Prepare to publish the project
     ```shell
     PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python setup.py bdist_wheel
     PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python setup.py develop
@@ -137,7 +136,7 @@ Maintainers need to do the following to push out a release:
     PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python setup.py sdist
     tar tzf dist/pcsFilter-<version>.tar.gz 
     ```
-* Upload to pypi
+1. Upload to pypi
     ```shell
     twine check dist/*
     twine upload dist/*
