@@ -22,7 +22,7 @@ setup(
         "ConfigUpdater~=3.0.0",
         "flake8>=3.8,<5.0.0",
         "isort~=5.10.0",
-        "radon~=5.1.0",
+        "radon~=6.0.1",
     ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
