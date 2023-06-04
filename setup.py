@@ -5,7 +5,7 @@ with open("README.md", "r") as readme:
 
 setup(
     name="pcsFilter",
-    version="1.0.0",
+    version="1.0.1",
     python_requires=">=3.7",
     author="Sasha Bondarev",
     author_email="github.pcsfilter@gmail.com",
