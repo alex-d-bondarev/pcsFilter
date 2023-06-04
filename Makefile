@@ -19,14 +19,11 @@ install:
 	pipenv install
 
 
-test_all: tox e2e_test pcsFilter_src
+test_all: nox e2e_test pcsFilter_src
 
-tox:
-	@echo "Prepare environment"
-	pip3 install tox tox-pyenv
-	pyenv local 3.7.12 3.8.12 3.9.1 3.10.6
-	@echo "Run tox"
-	tox
+nox:
+	@echo "Run tests against python 3.7, 3.8, 3.9, and 3.10"
+	nox
 
 quick_test:
 	@echo "Run tests"

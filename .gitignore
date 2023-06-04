@@ -3,8 +3,9 @@
 *.txt
 !flake8.txt
 !radon.txt
+.nox
 .pytest_cache
-.tox
+.python-version
 __pycache__/
 build/
 dist/
