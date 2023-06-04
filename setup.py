@@ -5,7 +5,7 @@ with open("README.md", "r") as readme:
 
 setup(
     name="pcsFilter",
-    version="1.0.0",
+    version="1.0.1",
     python_requires=">=3.7",
     author="Sasha Bondarev",
     author_email="github.pcsfilter@gmail.com",
@@ -22,7 +22,7 @@ setup(
         "ConfigUpdater~=3.0.0",
         "flake8>=3.8,<5.0.0",
         "isort~=5.10.0",
-        "radon~=5.1.0",
+        "radon~=6.0.1",
     ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
