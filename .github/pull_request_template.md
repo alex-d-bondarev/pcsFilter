@@ -3,8 +3,8 @@
 _PR description_
 
 ## Checklist before review/merge
-- [ ] I have followed the [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md)
-- [ ] I have followed the `Help with code` section in [CONTRIBUTING.md](../CONTRIBUTING.md)
+- [ ] I have followed the [CODE_OF_CONDUCT.md](https://github.com/alex-d-bondarev/pcsFilter/blob/master/CODE_OF_CONDUCT.md)
+- [ ] I have followed the `Help with code` section in [CONTRIBUTING.md](https://github.com/alex-d-bondarev/pcsFilter/blob/master/CONTRIBUTING.md)
 - [ ] I have performed a self-review of this code
 - [ ] I have added tests (*)
 - [ ] PR is linked to an issue in the Development tab (**)

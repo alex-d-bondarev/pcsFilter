@@ -120,26 +120,16 @@ met.
 Maintainers need to do the following to push out a release:
 
 1. Switch to the master branch and make sure it's up to date.
-1. [Optional] Bump up the version in the `setup.py`
-1. Test locally
-    ```shell
-    pip install -e .
-    ```
-1. Prepare to publish the project
-    ```shell
-    PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python setup.py bdist_wheel
-    PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python setup.py develop
-    PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pip3 install -e .
-    pipenv shell
-    pcsFilter src/pcsFilter
-    exit
-    PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python setup.py sdist
-    tar tzf dist/pcsFilter-<version>.tar.gz 
-    ```
-1. Upload to pypi
-    ```shell
-    twine check dist/*
-    twine upload dist/*
+1. Ensure that the tests are passing.
+1. Ensure `pyproject.toml` has an unpublished version.
+1. Publish the new version
+   ```shell
+   # Option no.1
+   poetry publish --build --username "__token__" --password $PYPI_TOKEN
+   
+   # Option no.2
+   poetry config pypi-token.pypi $PYPI_TOKEN
+   make publish
     ```
 
 ## References:
