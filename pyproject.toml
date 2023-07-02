@@ -22,3 +22,6 @@ wheel = ">=0.38.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+pcsFilter = "src.pcsFilter.cli:main"
