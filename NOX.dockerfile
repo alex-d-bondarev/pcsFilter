@@ -1,0 +1,7 @@
+FROM thekevjames/nox:2023.4.22
+
+ARG PROJECT_FOLDER=/pcsFilter
+WORKDIR $PROJECT_FOLDER
+COPY . $PROJECT_FOLDER
+
+CMD ["make", "nox"]
