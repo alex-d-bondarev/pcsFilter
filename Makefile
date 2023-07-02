@@ -2,42 +2,39 @@
 
 default:
 	@echo "\nThe following commands are supported for general usage:\n"
-	@echo "pip_build \t # Build pcsFilter locally via pip"
-	@echo "clean \t\t # Clean the project"
-	@echo "install \t # Install project dependencies"
-	@echo "reinstall \t # Clean the project and install from scratch"
-	@echo "test_all \t # Run all (unit, integration, e2e) tests against multiple python versions"
-	@echo "quick_test \t # Quick test (unit, integration) the project against current python version"
+	@echo "clean      # Delete python virtual environment and poetry.lock"
+	@echo "install    # Create python virtual environment and install project dependencies"
+	@echo "reinstall  # Clean the project and install from scratch"
+	@echo "update     # Update project dependencies"
+	@echo "test_all   # Run unit, integration and e2e tests against supported python versions"
+	@echo "quick_test # Run unit and integration tests against current python version"
+	@echo "publish    # Publish project to pypi. See CONTRIBUTING.md for details"
+
+clean:
+	poetry env remove --all
+	rm -f poetry.lock
+
+install:
+	@echo "Set poetry with the current python version"
+	poetry env use python --version | grep -Eo '[0-9]+([.][0-9]+)+([.][0-9]+)?'
+	@echo "Install dependencies"
+	poetry install
+	$(MAKE) path
+
+path:
+	@echo "Python virtual environment (virtualenv) path is:"
+	poetry show -v | grep "Using virtualenv"
 
 reinstall: clean install
 
-clean:
-	pipenv --rm
-	rm -f Pipfile.lock
+update:
+	poetry update
 
-install:
-	pipenv install
-
-
-test_all: nox e2e_test pcsFilter_src
+test_all: nox e2e_test
 
 nox:
 	@echo "Run tests against python 3.7, 3.8, 3.9, and 3.10"
 	nox
-
-quick_test:
-	@echo "Run tests"
-	pyenv local 3.10.6
-	PIPENV_IGNORE_VIRTUALENVS=1 pipenv run pytest -v -m "unit or integration"
-
-pcsFilter_src:
-	@echo "Run pcsFilter"
-	pyenv local 3.10.6
-	$(MAKE) pip_build
-	pcsFilter -s ./src
-
-pip_build:
-	pip install -e .
 
 e2e_test: stop_clean_docker start_docker stop_clean_docker
 
@@ -48,3 +45,9 @@ start_docker:
 stop_clean_docker:
 	docker stop pcsfilter-container || true
 	docker rm pcsfilter-container || true
+
+quick_test:
+	poetry run pytest -v -m "unit or integration"
+
+publish:
+	poetry --build publish
