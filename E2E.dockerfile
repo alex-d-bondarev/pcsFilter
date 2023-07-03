@@ -1,12 +1,14 @@
 FROM python:3.10.6-slim
 
 ARG PROJECT_FOLDER=/pcsFilter
+ENV POETRY_VERSION=1.5.1
+
 WORKDIR $PROJECT_FOLDER
 
 COPY pyproject.toml poetry.lock README.md $PROJECT_FOLDER
 COPY ./src $PROJECT_FOLDER/src
 
-RUN pip install poetry~=1.5  \
+RUN pip install poetry==$POETRY_VERSION \
     && poetry env use python --version | grep -Eo '[0-9]+([.][0-9]+)+([.][0-9]+)?' \
     && poetry install
 
