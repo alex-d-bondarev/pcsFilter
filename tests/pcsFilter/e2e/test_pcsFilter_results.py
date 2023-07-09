@@ -25,8 +25,8 @@ def _assert_files_are_the_same_in(dir_1, dir_2):
 
 
 def _assert_file_contents_are_the_same_in(dir_1, dir_2):
-    dir_1_paths = [path for path in dir_1.iterdir()]
-    dir_2_paths = [path for path in dir_2.iterdir()]
+    dir_1_paths = sorted([path for path in dir_1.iterdir()])
+    dir_2_paths = sorted([path for path in dir_2.iterdir()])
 
     for file_1, file_2 in zip(dir_1_paths, dir_2_paths):
         assert ExistingFile(file_1).get_content() == \
