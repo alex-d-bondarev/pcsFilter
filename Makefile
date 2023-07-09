@@ -40,7 +40,7 @@ e2e_test: stop_clean_docker start_docker stop_clean_docker
 
 start_docker:
 	docker build -f E2E.dockerfile -t pcsfilter .
-	docker run -it --name pcsfilter-container pcsfilter e2e
+	docker run --name pcsfilter-container pcsfilter e2e
 
 stop_clean_docker:
 	docker stop pcsfilter-container || true
