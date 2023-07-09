@@ -4,19 +4,30 @@ on: [pull_request]
 
 jobs:
   run-nox:
-    runs-on: ubuntu-22.04
+    name: Run tests with python nox
+    runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Install Poetry
         uses: snok/install-poetry@v1
-      - uses: actions/checkout@v3
-      - uses: wntrblm/nox@2023.04.22
+
+      - name: Use python nox
+        uses: wntrblm/nox@2023.04.22
         with:
           python-versions: "3.10, 3.9, 3.8, 3.7"
-      - run: nox
+          run: nox
 
   run-e2e:
-    needs: ["run-nox"]
-    using: "docker"
-    image: E2E.dockerfile
-    args:
-      - "e2e"
+    name: Run E2E test in docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run docker
+        uses: addnab/docker-run-action@v3
+        with:
+          image: E2E.dockerfile
+          eun: "e2e"
