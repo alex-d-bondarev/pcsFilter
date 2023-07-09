@@ -46,12 +46,12 @@ git checkout -b i12-use-isort-api
 1. [nox](https://nox.thea.codes/en/stable/tutorial.html) is installed
 2. [pyenv](https://github.com/pyenv/pyenv#installation) is installed.
    - Supported python versions are setup like:
-   ```bash
+   ```sh
    pyenv install 3.10 3.9 3.8 3.7
    pyenv local 3.10 3.9 3.8 3.7
    ```
 1. Install the development dependencies:
-   ```shell
+   ```sh
    make install
    ```
 
@@ -59,7 +59,7 @@ git checkout -b i12-use-isort-api
 **NOTE**: You can skip this section when only documentation is changed.
 
 Test the project after each code change by running make:
-```shell
+```sh
 make test_all
 ```
 
@@ -119,17 +119,26 @@ met.
 Maintainers need to do the following to push out a release:
 
 1. Switch to the master branch and make sure it's up to date.
-1. Ensure that the tests are passing.
+1. Ensure that all the tests are passing per the [Make a Pull Request section](#make-a-pull-request)
 1. Ensure `pyproject.toml` has an unpublished version.
-1. Publish the new version
-   ```shell
+1. Create a tag with the version that matches `pyproject.toml` one:
+   ```sh
+   export VERSION="X.Y.Z"
+   export DESCRIPTION="Short description"
+   git tag -a ${VERSION} -m ${DESCRIPTION} && git push origin ${VERSION} 
+   ```
+1. Ensure that the new version was published to [Test PyPi](https://test.pypi.org/)
+1. Ensure that the new version was published to [PyPi](https://pypi.org/)
+
+### Manual alternative in case of emergency
+   ```sh
    # Option no.1
    poetry publish --build --username "__token__" --password $PYPI_TOKEN
    
    # Option no.2
    poetry config pypi-token.pypi $PYPI_TOKEN
    make publish
-    ```
+   ```
 
 ## References:
 The [activeadmin CONTRIBUTING.md](https://github.com/activeadmin/activeadmin/blob/HEAD/CONTRIBUTING.md) 
