@@ -5,7 +5,7 @@ ENV POETRY_VERSION=1.5.1
 
 WORKDIR $PROJECT_FOLDER
 
-COPY pyproject.toml poetry.lock README.md $PROJECT_FOLDER
+COPY pyproject.toml poetry.lock README.md "${PROJECT_FOLDER}/"
 COPY ./src $PROJECT_FOLDER/src
 
 RUN pip install poetry==$POETRY_VERSION \
