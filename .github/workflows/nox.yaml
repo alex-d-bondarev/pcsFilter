@@ -9,5 +9,5 @@ jobs:
       - uses: actions/checkout@v3
       - uses: wntrblm/nox@2022.8.7
         with:
-          python-versions: "3.10 3.9 3.8 3.7"
+          python-versions: "3.10, 3.9, 3.8, 3.7"
       - run: nox
