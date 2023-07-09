@@ -1,0 +1,14 @@
+name: Run nox
+description: Run unit and integration tests against supported python versions using nox
+
+on: pull_request
+
+jobs:
+  run-nox:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: wntrblm/nox@2022.8.7
+        with:
+          python-versions: "3.10 3.9 3.8 3.7"
+      - run: nox
