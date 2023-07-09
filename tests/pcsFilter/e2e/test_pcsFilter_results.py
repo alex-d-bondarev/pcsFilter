@@ -19,8 +19,8 @@ def test_pcsFilter_results():
 
 
 def _assert_files_are_the_same_in(dir_1, dir_2):
-    dir_1_contents = [path.name for path in dir_1.iterdir()]
-    dir_2_contents = [path.name for path in dir_2.iterdir()]
+    dir_1_contents = {path.name for path in dir_1.iterdir()}
+    dir_2_contents = {path.name for path in dir_2.iterdir()}
     assert dir_1_contents == dir_2_contents
 
 
