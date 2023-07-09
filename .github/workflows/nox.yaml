@@ -1,7 +1,7 @@
 name: Run nox
 description: Run unit and integration tests against supported python versions using nox
 
-on: pull_request
+on: [push, pull_request]
 
 jobs:
   run-nox:
