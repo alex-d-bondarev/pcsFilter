@@ -8,7 +8,7 @@ There are multiple options:
 1. [Ask a question](https://github.com/alex-d-bondarev/pcsFilter/issues/new?template=question.md).
 1. Help fixing reported issue. See details below:
 
-### Issue workflow
+## Issue workflow
 `requires_review` -> `task`
                   \
                    > `wontfix`
@@ -27,7 +27,7 @@ There are multiple ways you can help with reported issues:
    1. Add a test that fails due to reported issue.
    1. Implement a fix for a reported issue.
 
-### Help with code
+## Help with code
 If you feel comfortable with code help please fork pcsFilter and create
 a branch with a descriptive name.
 
@@ -37,8 +37,7 @@ A good branch name would be (where issue #12 is the ticket you're working on):
 git checkout -b i12-use-isort-api
 ```
 
-#### Get the test suite running
-##### 0. Precondition
+### 0. Precondition
 **NOTE**: You can skip this section when documentation is changed only.
 
 1. [make](https://www.gnu.org/software/make/) is installed
@@ -55,7 +54,7 @@ git checkout -b i12-use-isort-api
    make install
    ```
 
-##### 1. Test project
+### 1. Test project
 **NOTE**: You can skip this section when only documentation is changed.
 
 Test the project after each code change by running make:
@@ -91,7 +90,7 @@ Go to GitHub and create a Pull Request.
 Wait for GitHub Actions run and ensure that the CI is passing.  
 Rerun the tests per [Test project](#1-test-project) section if CI is failing.
 
-### Keeping your Pull Request updated
+### 4. Keeping your Pull Request updated
 If a maintainer asks you to "rebase" your PR, they're saying that a lot of code
 has changed, and that you need to update your branch so it's easier to merge.
 
@@ -104,7 +103,7 @@ git pull --rebase upstream master
 git push --force-with-lease i12-use-isort-api
 ```
 
-### Merging a PR (maintainers only)
+### 5. Merging a PR (maintainers only)
 A PR can only be merged into master by a maintainer if:
 
 * PR template checkboxes were clicked.
@@ -115,7 +114,7 @@ A PR can only be merged into master by a maintainer if:
 Any maintainer is allowed to merge a PR if all of these conditions are
 met.
 
-### Shipping a release (maintainers only)
+### 6. Shipping a new release (maintainers only)
 Maintainers need to do the following to push out a release:
 
 1. Switch to the master branch and make sure it's up to date.
@@ -130,7 +129,7 @@ Maintainers need to do the following to push out a release:
 1. Ensure that the new version was published to [Test PyPi](https://test.pypi.org/project/pcsfilter/#history)
 1. Ensure that the new version was published to [PyPi](https://pypi.org/project/pcsfilter/#history)
 
-### Manual alternative in case of emergency
+#### Manual alternative in case of emergency
    ```sh
    # Option no.1
    poetry publish --build --username "__token__" --password $PYPI_TOKEN
