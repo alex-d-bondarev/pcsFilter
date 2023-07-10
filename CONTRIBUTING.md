@@ -4,9 +4,9 @@ Thank you for checking and considering a contribution to pcsFilter!
 ## How can contribute?
 There are multiple options:
 1. [Create a bug report](https://github.com/alex-d-bondarev/pcsFilter/issues/new?template=bug_report.md).
-2. [Create a feature request](https://github.com/alex-d-bondarev/pcsFilter/issues/new?template=feature_request.md).
-3. [Ask a question](https://github.com/alex-d-bondarev/pcsFilter/issues/new?template=question.md).
-4. Help fixing reported issue. See details below:
+1. [Create a feature request](https://github.com/alex-d-bondarev/pcsFilter/issues/new?template=feature_request.md).
+1. [Ask a question](https://github.com/alex-d-bondarev/pcsFilter/issues/new?template=question.md).
+1. Help fixing reported issue. See details below:
 
 ### Issue workflow
 `requires_review` -> `task`
@@ -21,11 +21,11 @@ Otherwise `wontfix` label will be applied.
 There are multiple ways you can help with reported issues:
 1. No coding help:
    1. Participate in issue discussions.
-   2. Help answering existing questions.
-2. Help with code:
+   1. Help answering existing questions.
+1. Help with code:
    1. Update documentation files.
-   2. Add a test that fails due to reported issue.
-   3. Implement a fix for a reported issue.
+   1. Add a test that fails due to reported issue.
+   1. Implement a fix for a reported issue.
 
 ### Help with code
 If you feel comfortable with code help please fork pcsFilter and create
@@ -44,7 +44,7 @@ git checkout -b i12-use-isort-api
 1. [make](https://www.gnu.org/software/make/) is installed
 1. [poetry](https://python-poetry.org/docs/) is installed
 1. [nox](https://nox.thea.codes/en/stable/tutorial.html) is installed
-2. [pyenv](https://github.com/pyenv/pyenv#installation) is installed.
+1. [pyenv](https://github.com/pyenv/pyenv#installation) is installed.
    - Supported python versions are setup like:
    ```sh
    pyenv install 3.10 3.9 3.8 3.7
