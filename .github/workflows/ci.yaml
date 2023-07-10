@@ -1,10 +1,10 @@
-name: Run nox
+name: Run CI
 
 on: [pull_request]
 
 jobs:
   run-nox:
-    name: Run tests with python nox
+    name: Unit and Integration tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,7 +20,7 @@ jobs:
           run: nox
 
   run-e2e:
-    name: Run E2E test in docker
+    name: E2E test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
