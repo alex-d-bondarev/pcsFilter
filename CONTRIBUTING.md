@@ -127,8 +127,8 @@ Maintainers need to do the following to push out a release:
    export DESCRIPTION="Short description"
    git tag -a ${VERSION} -m ${DESCRIPTION} && git push origin ${VERSION} 
    ```
-1. Ensure that the new version was published to [Test PyPi](https://test.pypi.org/)
-1. Ensure that the new version was published to [PyPi](https://pypi.org/)
+1. Ensure that the new version was published to [Test PyPi](https://test.pypi.org/project/pcsfilter/#history)
+1. Ensure that the new version was published to [PyPi](https://pypi.org/project/pcsfilter/#history)
 
 ### Manual alternative in case of emergency
    ```sh
