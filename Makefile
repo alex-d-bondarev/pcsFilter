@@ -51,3 +51,12 @@ quick_test:
 
 publish:
 	poetry --build publish
+
+docker_build_app:
+	docker build -t pcsfilter-app -f APP.dockerfile .
+
+docker_run_app_src:
+	docker run -it pcsfilter-app ./src/pcsFilter
+
+docker_exec:
+	docker run --rm -it --entrypoint bash pcsfilter-app
