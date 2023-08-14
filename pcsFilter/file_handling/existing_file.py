@@ -2,8 +2,8 @@ import logging
 from pathlib import Path
 from typing import TextIO
 
-from src.pcsFilter.file_handling import non_existing_file
-from src.pcsFilter.file_handling.abstract_file_handler import AFileHandler
+from pcsFilter.file_handling import non_existing_file
+from pcsFilter.file_handling.abstract_file_handler import AFileHandler
 
 
 class ExistingFile(AFileHandler):

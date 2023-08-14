@@ -3,7 +3,7 @@ import os
 import pytest
 from click.testing import CliRunner
 
-from src.pcsFilter.cli import main
+from pcsFilter.cli import main
 
 
 @pytest.mark.integration

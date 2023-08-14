@@ -4,7 +4,7 @@ from typing import Optional
 
 from configupdater import ConfigUpdater
 
-from src.pcsFilter.file_handling.file_finder import file_from_path
+from pcsFilter.file_handling.file_finder import file_from_path
 
 SECTION_NAME = 'pcsFilter'
 NEW_CONFIG_FILE = (

@@ -1,7 +1,7 @@
 import pytest  # noqa
 
-from src.pcsFilter.file_handling.file_finder import file_from_path
-from src.pcsFilter.tools.flake8 import run_flake8
+from pcsFilter.file_handling.file_finder import file_from_path
+from pcsFilter.tools.flake8 import run_flake8
 from tests.pcsFilter.unit.fixtures import create_temp_file  # noqa
 
 

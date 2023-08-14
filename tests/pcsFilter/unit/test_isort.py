@@ -1,6 +1,6 @@
 import pytest  # noqa
 
-from src.pcsFilter.tools.isort import run_isort
+from pcsFilter.tools.isort import run_isort
 from tests.pcsFilter.unit.fixtures import create_temp_file  # noqa
 
 

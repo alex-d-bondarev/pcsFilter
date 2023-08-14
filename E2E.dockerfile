@@ -6,9 +6,9 @@ ENV POETRY_VERSION=1.5.1
 WORKDIR $PROJECT_FOLDER
 
 COPY pyproject.toml poetry.lock README.md "${PROJECT_FOLDER}/"
-COPY ./src $PROJECT_FOLDER/src
+COPY ./pcsFilter $PROJECT_FOLDER/pcsFilter
 
-RUN pip install poetry==$POETRY_VERSION \
+RUN pip install "poetry==${POETRY_VERSION}" \
     && poetry env use python --version | grep -Eo '[0-9]+([.][0-9]+)+([.][0-9]+)?' \
     && poetry install
 

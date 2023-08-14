@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "pcsFilter"
-version = "1.0.1"
+version = "1.0.0"
 description = ""
 authors = ["Sasha Bondarev <github.pcsfilter@gmail.com>"]
 readme = "README.md"
-packages = [{include = "src"}]
+packages = [{include = "pcsFilter"}]
 
 [tool.poetry.dependencies]
 python = "^3.7"
@@ -24,4 +24,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-pcsFilter = "src.pcsFilter.cli:main"
+pcsFilter = "pcsFilter.cli:main"
