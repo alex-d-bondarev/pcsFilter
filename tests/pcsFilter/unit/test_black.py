@@ -1,6 +1,6 @@
 import pytest  # noqa
 
-from src.pcsFilter.tools.black import run_black
+from pcsFilter.tools.black import run_black
 from tests.pcsFilter.unit.fixtures import create_temp_file  # noqa
 
 

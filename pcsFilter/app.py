@@ -1,12 +1,12 @@
 from pathlib import Path
 
-from src.pcsFilter.file_handling.file_finder import file_from_path
-from src.pcsFilter.quality_handler import QualityHandler
-from src.pcsFilter.tools.black import run_black
-from src.pcsFilter.tools.blue import run_blue
-from src.pcsFilter.tools.flake8 import run_flake8
-from src.pcsFilter.tools.isort import run_isort
-from src.pcsFilter.tools.radon import run_radon
+from pcsFilter.file_handling.file_finder import file_from_path
+from pcsFilter.quality_handler import QualityHandler
+from pcsFilter.tools.black import run_black
+from pcsFilter.tools.blue import run_blue
+from pcsFilter.tools.flake8 import run_flake8
+from pcsFilter.tools.isort import run_isort
+from pcsFilter.tools.radon import run_radon
 
 VERSION_ONE_PLUS = False
 

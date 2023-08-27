@@ -1,6 +1,6 @@
 import pytest  # noqa
 
-from src.pcsFilter.tools.blue import run_blue
+from pcsFilter.tools.blue import run_blue
 from tests.pcsFilter.unit.fixtures import create_temp_file  # noqa
 
 

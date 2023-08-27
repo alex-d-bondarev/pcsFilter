@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from src.pcsFilter.file_handling.existing_file import ExistingFile
+from pcsFilter.file_handling.existing_file import ExistingFile
 
 
 @pytest.mark.e2e

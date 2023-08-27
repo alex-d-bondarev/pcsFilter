@@ -4,8 +4,8 @@ from pathlib import Path
 
 import click
 
-from src.pcsFilter.file_handling.file_finder import file_from_path
-from src.pcsFilter.setup_handler import SetUpHandler
+from pcsFilter.file_handling.file_finder import file_from_path
+from pcsFilter.setup_handler import SetUpHandler
 
 FLAKE_8_MESSAGE = (
     'Flake8 score was {init_flake8} '
