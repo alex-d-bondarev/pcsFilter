@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pcsFilter"
-version = "1.0.1"
+version = "1.0.2"
 description = ""
 authors = ["Sasha Bondarev <github.pcsfilter@gmail.com>"]
 readme = "README.md"
