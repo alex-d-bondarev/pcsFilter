@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest  # noqa
 
-from src.pcsFilter.file_handling.file_finder import file_from_path
-from src.pcsFilter.tools.radon import run_radon
+from pcsFilter.file_handling.file_finder import file_from_path
+from pcsFilter.tools.radon import run_radon
 from tests.pcsFilter.unit.fixtures import create_temp_file  # noqa
 
 

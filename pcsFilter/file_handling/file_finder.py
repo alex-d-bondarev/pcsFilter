@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from src.pcsFilter.file_handling.abstract_file_handler import AFileHandler
-from src.pcsFilter.file_handling.existing_file import ExistingFile
-from src.pcsFilter.file_handling.non_existing_file import NonExistingFile
+from pcsFilter.file_handling.abstract_file_handler import AFileHandler
+from pcsFilter.file_handling.existing_file import ExistingFile
+from pcsFilter.file_handling.non_existing_file import NonExistingFile
 
 
 def file_from_path(path: Path) -> AFileHandler:
@@ -22,5 +22,5 @@ def file_from_same_dir(name: str) -> AFileHandler:
     Find file in the current directory
     and return it in the form of AFileHandler
     """
-    relative_file_path = Path('.') / name
+    relative_file_path = Path('') / name
     return file_from_path(relative_file_path)

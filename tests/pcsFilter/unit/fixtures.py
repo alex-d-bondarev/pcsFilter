@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytest  # noqa
 
-from src.pcsFilter.file_handling.abstract_file_handler import AFileHandler
-from src.pcsFilter.file_handling.file_finder import file_from_path
+from pcsFilter.file_handling.abstract_file_handler import AFileHandler
+from pcsFilter.file_handling.file_finder import file_from_path
 
 
 @pytest.fixture

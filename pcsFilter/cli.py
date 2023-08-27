@@ -1,6 +1,6 @@
 import click
 
-from src.pcsFilter.app import run_all
+from pcsFilter.app import run_all
 
 
 @click.command()
