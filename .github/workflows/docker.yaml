@@ -24,7 +24,5 @@ jobs:
           context: .
           file: ./APP.dockerfile
           push: true
-          tags:
-            - alexdbondarev/pcsfilter:1.0.0,
-            - alexdbondarev/pcsfilter:latest
+          tags: alexdbondarev/pcsfilter:1.0.0,alexdbondarev/pcsfilter:latest
           build-args: PCS_FILTER_VERSION=1.0.3
