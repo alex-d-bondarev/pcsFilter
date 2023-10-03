@@ -1,4 +1,9 @@
-src/pcsFilter/quality_handler.py
+pcsFilter/app.py
+    [1m[35mF [0m14:0 _prepare_for_analysis - [32mA[0m
+    [1m[35mF [0m27:0 run_all - [32mA[0m
+pcsFilter/cli.py
+    [1m[35mF [0m18:0 main - [32mA[0m
+pcsFilter/quality_handler.py
     [1m[36mC [0m28:0 QualityHandler - [32mA[0m
     [1m[37mM [0m31:4 QualityHandler.__init__ - [32mA[0m
     [1m[37mM [0m54:4 QualityHandler._calculate_new_cc_stats - [32mA[0m
@@ -11,12 +16,7 @@ src/pcsFilter/quality_handler.py
     [1m[37mM [0m62:4 QualityHandler._load_previous_metrics - [32mA[0m
     [1m[37mM [0m103:4 QualityHandler._save_result - [32mA[0m
     [1m[37mM [0m37:4 QualityHandler.compare_metrics - [32mA[0m
-src/pcsFilter/cli.py
-    [1m[35mF [0m18:0 main - [32mA[0m
-src/pcsFilter/app.py
-    [1m[35mF [0m14:0 _prepare_for_analysis - [32mA[0m
-    [1m[35mF [0m27:0 run_all - [32mA[0m
-src/pcsFilter/setup_handler.py
+pcsFilter/setup_handler.py
     [1m[36mC [0m15:0 SetUpHandler - [32mA[0m
     [1m[37mM [0m18:4 SetUpHandler.__init__ - [32mA[0m
     [1m[37mM [0m29:4 SetUpHandler._create_setup_cfg_if_not_exists - [32mA[0m
@@ -26,7 +26,7 @@ src/pcsFilter/setup_handler.py
     [1m[37mM [0m37:4 SetUpHandler.has_section - [32mA[0m
     [1m[37mM [0m43:4 SetUpHandler.save - [32mA[0m
     [1m[37mM [0m63:4 SetUpHandler.set - [32mA[0m
-src/pcsFilter/file_handling/abstract_file_handler.py
+pcsFilter/file_handling/abstract_file_handler.py
     [1m[36mC [0m8:0 AFileHandler - [32mA[0m
     [1m[37mM [0m12:4 AFileHandler.delete - [32mA[0m
     [1m[37mM [0m17:4 AFileHandler.exists - [32mA[0m
@@ -35,17 +35,7 @@ src/pcsFilter/file_handling/abstract_file_handler.py
     [1m[37mM [0m34:4 AFileHandler.name - [32mA[0m
     [1m[37mM [0m39:4 AFileHandler.writable_file - [32mA[0m
     [1m[37mM [0m44:4 AFileHandler.write - [32mA[0m
-src/pcsFilter/file_handling/non_existing_file.py
-    [1m[36mC [0m8:0 NonExistingFile - [32mA[0m
-    [1m[37mM [0m11:4 NonExistingFile.__init__ - [32mA[0m
-    [1m[37mM [0m14:4 NonExistingFile.delete - [32mA[0m
-    [1m[37mM [0m18:4 NonExistingFile.exists - [32mA[0m
-    [1m[37mM [0m22:4 NonExistingFile.file_path - [32mA[0m
-    [1m[37mM [0m26:4 NonExistingFile.get_content - [32mA[0m
-    [1m[37mM [0m30:4 NonExistingFile.name - [32mA[0m
-    [1m[37mM [0m34:4 NonExistingFile.writable_file - [32mA[0m
-    [1m[37mM [0m38:4 NonExistingFile.write - [32mA[0m
-src/pcsFilter/file_handling/existing_file.py
+pcsFilter/file_handling/existing_file.py
     [1m[36mC [0m9:0 ExistingFile - [32mA[0m
     [1m[37mM [0m12:4 ExistingFile.__init__ - [32mA[0m
     [1m[37mM [0m17:4 ExistingFile.delete - [32mA[0m
@@ -55,19 +45,29 @@ src/pcsFilter/file_handling/existing_file.py
     [1m[37mM [0m39:4 ExistingFile.name - [32mA[0m
     [1m[37mM [0m43:4 ExistingFile.writable_file - [32mA[0m
     [1m[37mM [0m47:4 ExistingFile.write - [32mA[0m
-src/pcsFilter/file_handling/file_finder.py
+pcsFilter/file_handling/file_finder.py
     [1m[35mF [0m8:0 file_from_path - [32mA[0m
     [1m[35mF [0m20:0 file_from_same_dir - [32mA[0m
-src/pcsFilter/tools/black.py
+pcsFilter/file_handling/non_existing_file.py
+    [1m[36mC [0m8:0 NonExistingFile - [32mA[0m
+    [1m[37mM [0m11:4 NonExistingFile.__init__ - [32mA[0m
+    [1m[37mM [0m14:4 NonExistingFile.delete - [32mA[0m
+    [1m[37mM [0m18:4 NonExistingFile.exists - [32mA[0m
+    [1m[37mM [0m22:4 NonExistingFile.file_path - [32mA[0m
+    [1m[37mM [0m26:4 NonExistingFile.get_content - [32mA[0m
+    [1m[37mM [0m30:4 NonExistingFile.name - [32mA[0m
+    [1m[37mM [0m34:4 NonExistingFile.writable_file - [32mA[0m
+    [1m[37mM [0m38:4 NonExistingFile.write - [32mA[0m
+pcsFilter/tools/black.py
     [1m[35mF [0m10:0 run_black - [32mA[0m
-src/pcsFilter/tools/flake8.py
-    [1m[35mF [0m10:0 run_flake8 - [32mA[0m
-src/pcsFilter/tools/radon.py
-    [1m[35mF [0m9:0 run_radon - [32mA[0m
-src/pcsFilter/tools/blue.py
+pcsFilter/tools/blue.py
     [1m[35mF [0m8:0 run_blue - [32mA[0m
-src/pcsFilter/tools/isort.py
+pcsFilter/tools/flake8.py
+    [1m[35mF [0m10:0 run_flake8 - [32mA[0m
+pcsFilter/tools/isort.py
     [1m[35mF [0m9:0 run_isort - [32mA[0m
+pcsFilter/tools/radon.py
+    [1m[35mF [0m9:0 run_radon - [32mA[0m
 
 57 blocks (classes, functions, methods) analyzed.
 Average complexity: [32mA (1.368421052631579)[0m
