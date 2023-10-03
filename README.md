@@ -60,7 +60,32 @@ pcsFilter --help
 ### Docker
 #### Installation
 ```shell
-docker pull
+docker pull alexdbondarev/pcsfilter:latest
+```
+
+#### Base command
+```shell
+docker run --rm -v $(PWD):/project -it alexdbondarev/pcsfilter:latest <path to project or file>
+```
+
+#### Strict
+Fail with status = 1, when new scores are worse. Has no effect during the 
+first run.
+```shell
+docker run --rm -v $(PWD):/project -it alexdbondarev/pcsfilter:latest -s <path to project or file>
+docker run --rm -v $(PWD):/project -it alexdbondarev/pcsfilter:latest --strict <path to project or file>
+```
+
+#### Override output path
+Default output path is `./.pcsFilter`. It can be overriden the following way:
+```shell
+docker run --rm -v $(PWD):/project -it alexdbondarev/pcsfilter:latest -o <new output path> <path to project or file>
+docker run --rm -v $(PWD):/project -it alexdbondarev/pcsfilter:latest --output-path <new output path> <path to project or file>
+```
+
+#### Help message
+```shell
+docker run --rm -v $(PWD):/project -it alexdbondarev/pcsfilter:latest --help
 ```
 
 
