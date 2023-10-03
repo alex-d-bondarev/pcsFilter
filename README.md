@@ -25,18 +25,19 @@ is applied on top:
       - _pcsFilter_ will exit with status = 1
 4. New scores and their details will be saved to a default or given output path.
 
-## Installation
+## Usage
+### Shell
+#### Installation
 ```shell
 pip install pcsFilter
 ```
 
-## Usage
-### Base
+#### Base command
 ```shell
 pcsFilter <path to project or file>
 ```
 
-### Strict
+#### Strict
 Fail with status = 1, when new scores are worse. Has no effect during the 
 first run.
 ```shell
@@ -44,17 +45,24 @@ pcsFilter -s <path to project or file>
 pcsFilter --strict <path to project or file>
 ```
 
-### Override output path
+#### Override output path
 Default output path is `./.pcsFilter`. It can be overriden the following way:
 ```shell
 pcsFilter -o <new output path> <path to project or file>
 pcsFilter --output-path <new output path> <path to project or file>
 ```
 
-### Help message
+#### Help message
 ```shell
 pcsFilter --help
 ```
+
+### Docker
+#### Installation
+```shell
+docker pull
+```
+
 
 ## Contributing
 Any contribution is always welcome!  

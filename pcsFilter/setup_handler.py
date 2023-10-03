@@ -8,7 +8,7 @@ from pcsFilter.file_handling.file_finder import file_from_path
 
 SECTION_NAME = 'pcsFilter'
 NEW_CONFIG_FILE = (
-    "[pcsFilter]\n# Goal is '0'\nflake8 = -1\n# Goal is '0'\ncc = -1\n"
+    "[pcsFilter]\n# Goal is '0'\nflake8 = -1\n# Goal is '1'\ncc = -1\n"
 )
 
 

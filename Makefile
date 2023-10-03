@@ -52,11 +52,11 @@ quick_test:
 publish:
 	poetry --build publish
 
-docker_build_app:
-	docker build --build-arg PCS_FILTER_VERSION=1.0.3 -t pcsfilter-app-alpine -f APP.dockerfile .
+docker_debug_build_app:
+	docker build --build-arg PCS_FILTER_VERSION=1.0.3 -t pcsfilter-app -f APP.dockerfile .
 
-docker_run_app_src:
-	docker run -it pcsfilter-app ./src/pcsFilter
+docker_debug_run_app_src:
+	docker run --rm -v $(PWD):/project -it pcsfilter-app ./pcsFilter
 
-docker_exec:
-	docker run --rm -it --entrypoint bash pcsfilter-app
+docker_debug_it:
+	docker run --rm --entrypoint sh -v $(PWD):/project -it pcsfilter-app

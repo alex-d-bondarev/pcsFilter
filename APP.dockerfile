@@ -4,4 +4,6 @@ ARG PCS_FILTER_VERSION=0.0.0
 
 RUN pip install "pcsFilter==${PCS_FILTER_VERSION}"
 
+VOLUME /source
+WORKDIR /source
 ENTRYPOINT ["pcsFilter"]
