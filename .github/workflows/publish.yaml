@@ -53,5 +53,5 @@ jobs:
           context: .
           file: ./APP.dockerfile
           push: true
-          tags: alexdbondarev/pcsfilter:${{ GITHUB_REF_NAME }},alexdbondarev/pcsfilter:latest
-          build-args: PCS_FILTER_VERSION=${{ GITHUB_REF_NAME }}
+          tags: alexdbondarev/pcsfilter:${{ github.ref_name }},alexdbondarev/pcsfilter:latest
+          build-args: PCS_FILTER_VERSION=${{ github.ref_name }}
